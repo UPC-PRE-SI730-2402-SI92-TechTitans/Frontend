@@ -1,17 +1,16 @@
 <script>
-// import SidebarMenu from './components/SideBarMenu.vue
-// Aun estoy trabajando en esto
+import SidebarMenu from './components/views/SideBarMenu.vue'
 
 export default {
   components: {
-    //SidebarMenu
+    SidebarMenu
   }
 }
 </script>
 
 <template>
   <div id="app">
-    <!--<SidebarMenu />-->
+    <SidebarMenu />
     <router-view />
   </div>
 </template>
@@ -19,5 +18,8 @@ export default {
 <style>
 #app {
   display: flex;
+}
+#app:last-child {
+  flex: 1;
 }
 </style>
