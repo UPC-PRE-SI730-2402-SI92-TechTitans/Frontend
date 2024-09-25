@@ -1,11 +1,18 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import GroupOverview from '../components/Groups/views/GroupOverview.vue'
-import GroupDetailsView from '../components/Groups/views/GroupDetailsView.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import GroupOverview from '../components/Groups/views/GroupOverview.vue';
+import GroupDetailView from '../components/Groups/views/GroupDetailView.vue';
+import GroupCreateView from '../components/Groups/views/GroupCreateView.vue';
 
 const routes = [
-  { path: '/', name: 'Home', component: GroupOverview },
+  { path: '/', name: 'Home', component: /*Cambiar por la view de home*/GroupOverview },
   { path: '/grupos', name: 'Groups', component: GroupOverview },
-  { path: '/grupo/:id', name: 'GroupDetails', component: GroupDetailsView }
+  {
+    path: '/grupo/:id',
+    name: 'GroupDetailView',
+    component: GroupDetailView,
+    props: true
+  },
+  { path: '/grupo/crear-grupo', name: 'GroupCreate', component: GroupCreateView }
 ]
 
 const router = createRouter({
