@@ -52,24 +52,33 @@ onBeforeMount(async () => {
 </script>
 
 <template>
-  <div>
-    <ContactoList
-      v-if="!isFormVisible"
-      :contactos="contactos"
-      @edit="loadForm"
-      @delete="deleteContacto"
-      @create="showCreateForm"
-    />
+  <div class="container">
+    <div>
+      <ContactoList
+        v-if="!isFormVisible"
+        :contactos="contactos"
+        @edit="loadForm"
+        @delete="deleteContacto"
+        @create="showCreateForm"
+      />
 
-    <ContactoForm
-      v-else
-      :contacto="selectedContacto"
-      :isEdit="isEdit"
-      @guardar="saveContacto"
-      @cancelar="cancelForm"
-    />
+      <ContactoForm
+        v-else
+        :contacto="selectedContacto"
+        :isEdit="isEdit"
+        @guardar="saveContacto"
+        @cancelar="cancelForm"
+      />
+    </div>
   </div>
 </template>
 
 <style scoped>
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 </style>

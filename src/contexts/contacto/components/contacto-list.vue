@@ -21,43 +21,44 @@ const showCreateForm = () => {
 </script>
 
 <template>
-  <h2>Contactos</h2>
-  <div class="contactos-container">
+<h2>Contactos</h2>
+<div class="contactos-container">
   <li v-for="contacto in contactos" :key="contacto.id || contacto.name" class="cards">
-  <pv-card class="contacto-card">
-    <template #header>
-      <pv-avatar icon="pi pi-user" size="xlarge" shape="circle" class="icono">
-      </pv-avatar>
-    </template>
-    <template #content>
-      Nombre: {{ contacto.name || '' }}
-      <br />
-      Correo electrónico: {{ contacto.email || '' }}
-    </template>
-    <template #footer>
-      <div class="botones">
-      <router-link
-        v-if="contacto.id"
-        :to="{ name: 'updateContacto', params: { id: contacto.id } }">Editar</router-link>
+    <pv-card class="contacto-card">
+      <template #header>
+        <pv-avatar icon="pi pi-user" size="xlarge" shape="circle" class="icono">
+        </pv-avatar>
+      </template>
+      <template #content>
+        Nombre: {{ contacto.name || '' }}
+        <br />
+        Correo electrónico: {{ contacto.email || '' }}
+      </template>
+      <template #footer>
+        <div class="botones">
+          <router-link
+            v-if="contacto.id"
+            :to="{ name: 'updateContacto', params: { id: contacto.id } }">Editar</router-link>
 
-      <pv-button
-        v-if="contacto.id"
-        @click="deleteContacto(contacto.id)"
-        severity="danger"
-        class="eliminar-boton"
-        label="Eliminar" />
-      </div>
-    </template>
-  </pv-card>
+          <pv-button
+            v-if="contacto.id"
+            @click="deleteContacto(contacto.id)"
+            severity="danger"
+            class="eliminar-boton"
+            label="Eliminar" />
+        </div>
+      </template>
+    </pv-card>
   </li>
-  </div>
-  <div class="agregar-boton">
-    <pv-button @click="showCreateForm" label="Añadir contacto" class="agregar-contacto" />
+</div>
+<div class="agregar-boton">
+  <pv-button @click="showCreateForm" label="Añadir contacto" class="agregar-contacto" />
 
-  </div>
+</div>
 </template>
 
 <style scoped>
+
 h2 {
   text-align: center;
   color: #B1375B;
@@ -78,6 +79,7 @@ h2 {
 .contactos-container{
   margin-right: 200px;
   margin-left: 200px;
+
 }
 
 .botones{

@@ -66,21 +66,25 @@ const onSubmit = () => {
 </script>
 
 <template>
-  <form @submit.prevent="onSubmit" class="form-container">
-    <h1>Nuevo contacto</h1>
-    <div class="form-group">
-      <contacto-name v-model="form.name"></contacto-name>
-    </div>
-    <div class="form-group">
-      <contacto-email v-model="form.email"></contacto-email>
-    </div>
-    <div class="form-actions">
-      <form-actions @guardar="onSubmit" @cancelar="onCancel"></form-actions>
-    </div>
-  </form>
+  <div class="contacto-form-container">
+    <form @submit.prevent="onSubmit" class="form-container">
+      <h1>Nuevo contacto</h1>
+      <div class="form-group">
+        <contacto-name v-model="form.name"></contacto-name>
+      </div>
+      <div class="form-group">
+        <contacto-email v-model="form.email"></contacto-email>
+      </div>
+      <div class="form-actions">
+        <form-actions @guardar="onSubmit" @cancelar="onCancel"></form-actions>
+      </div>
+    </form>
+  </div>
 </template>
 
 <style scoped>
+.contacto-form-container {
+}
 .form-container {
   display: flex;
   flex-direction: column;
