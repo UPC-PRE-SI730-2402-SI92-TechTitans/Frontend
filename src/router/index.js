@@ -15,7 +15,7 @@ const routes = [
     component: GroupDetailView,
     props: true
   },
-  { path: '/grupo/crear-grupo', name: 'GroupCreate', component: GroupCreateView }
+  { path: '/grupo/crear-grupo', name: 'GroupCreate', component: GroupCreateView },
   { path: '/contacto', component: ContactoManagement },
   { path: '/create-contacto', component: ContactoForm, name: 'createContacto' },
   { path: '/update-contacto/:id', component: ContactoForm, name: 'updateContacto' }
