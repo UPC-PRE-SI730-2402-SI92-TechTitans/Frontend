@@ -1,0 +1,14 @@
+{
+  "contactos": [
+    {
+      "id": "1",
+      "name": "Maria Jara",
+      "email": "maria_jara@gmail.com"
+    },
+    {
+      "id": "2",
+      "name": "Pedro Sanchez",
+      "email": "pedro_sanchez@gmail.com"
+    }
+  ]
+}
