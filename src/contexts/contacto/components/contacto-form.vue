@@ -6,7 +6,7 @@ import { Contacto } from '../models/contacto-entity.js'
 import { ContactoApiService } from '@/contexts/contacto/services/contacto-api.js'
 import { useRoute } from 'vue-router'
 import { onMounted, reactive, ref } from 'vue'
-import router from '@/router.js'
+import router from '@/router/index.js'
 
 const routes = useRoute()
 const emit = defineEmits(['cancelar'])
