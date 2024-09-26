@@ -28,7 +28,7 @@ export default {
         <router-link to="/reportes" class="item-link">Reportes</router-link>
       </li>
       <li class="list-item">
-        <router-link to="/contactos" class="item-link">Contactos</router-link>
+        <router-link to="/contacto" class="item-link">Contactos</router-link>
       </li>
       <li class="list-item">
         <router-link to="/division-gastos" class="item-link">División de gastos</router-link>
@@ -76,5 +76,24 @@ export default {
 }
 .item-link:focus {
   color: #fff;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  .sidebar-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 5px;
+  }
+  .list-item {
+    padding: 20px;
+  }
 }
 </style>

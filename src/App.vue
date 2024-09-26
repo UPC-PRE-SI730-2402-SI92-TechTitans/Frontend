@@ -22,4 +22,9 @@ export default {
 #app:last-child {
   flex: 1;
 }
+@media screen and (max-width: 700px) {
+  #app {
+    flex-direction: column;
+  }
+}
 </style>
