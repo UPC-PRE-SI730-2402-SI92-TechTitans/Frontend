@@ -4,13 +4,16 @@ export default {
   props: ['id'],
   computed: {
     group() {
-      const groupId = Number(this.id);
-      const group = this.$store.state.groups.find(group => group.id === groupId);
-      return group;
+      const groupId = Number(this.id)
+      const group = this.$store.state.groups.find((group) => group.id === groupId)
+      return group
     },
     totalDebt() {
-      if (!this.group) return 0;
-      return Object.values(this.group.participants).reduce((total, participant) => total + participant.pendingPayment, 0);
+      if (!this.group) return 0
+      return Object.values(this.group.participants).reduce(
+        (total, participant) => total + participant.pendingPayment,
+        0
+      )
     }
   }
 }
@@ -40,7 +43,9 @@ export default {
     </table>
 
     <h3 class="subtitle">Saldo total</h3>
-    <p class="total-debt">Pago pendiente <span>{{ totalDebt }}$</span></p>
+    <p class="total-debt">
+      Pago pendiente <span>{{ totalDebt }}$</span>
+    </p>
     <table class="table">
       <thead class="table-head">
         <tr>

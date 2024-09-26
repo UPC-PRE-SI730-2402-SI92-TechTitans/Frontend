@@ -1,5 +1,4 @@
 <script setup>
-
 import { onBeforeMount, ref } from 'vue'
 import ContactoList from '@/contexts/contacto/components/contacto-list.vue'
 import ContactoForm from '@/contexts/contacto/components/contacto-form.vue'

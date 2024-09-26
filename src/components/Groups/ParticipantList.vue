@@ -1,28 +1,36 @@
 <script>
 export default {
-  name: 'ParticipantList',
-};
+  name: 'ParticipantList'
+}
 </script>
 
 <template>
   <div class="participant-list-container">
     <div class="add-participant">
-      <input type="text" placeholder="Nombre del participante" class="participant-name-input"/>
-      <button type="button" class="material-symbols-outlined" title="Agregar participante">Add</button>
+      <input type="text" placeholder="Nombre del participante" class="participant-name-input" />
+      <button type="button" class="material-symbols-outlined" title="Agregar participante">
+        Add
+      </button>
     </div>
     <div class=".remove-participant">
       <ul class="participant-list">
         <li class="participant-item">
           <p class="participant-name">Jose</p>
-          <button type="button" class="material-symbols-outlined" title="Eliminar participante">Remove</button>
+          <button type="button" class="material-symbols-outlined" title="Eliminar participante">
+            Remove
+          </button>
         </li>
         <li class="participant-item">
           <p class="participant-name">Manuel</p>
-          <button type="button" class="material-symbols-outlined" title="Eliminar participante">Remove</button>
+          <button type="button" class="material-symbols-outlined" title="Eliminar participante">
+            Remove
+          </button>
         </li>
         <li class="participant-item">
           <p class="participant-name">Rosa</p>
-          <button type="button" class="material-symbols-outlined" title="Eliminar participante">Remove</button>
+          <button type="button" class="material-symbols-outlined" title="Eliminar participante">
+            Remove
+          </button>
         </li>
       </ul>
     </div>
@@ -39,7 +47,9 @@ export default {
   align-items: center;
   margin-bottom: 10px;
 }
-.participant-name-input, .add-participant button, .participant-item button {
+.participant-name-input,
+.add-participant button,
+.participant-item button {
   background-color: transparent;
   color: inherit;
   border: none;
@@ -54,10 +64,12 @@ export default {
 .participant-name-input:focus {
   outline: none;
 }
-.add-participant button, .participant-item button {
+.add-participant button,
+.participant-item button {
   padding: 1px;
 }
-.add-participant button:hover, .participant-item button:hover {
+.add-participant button:hover,
+.participant-item button:hover {
   outline: 1px solid #0003;
   cursor: pointer;
 }

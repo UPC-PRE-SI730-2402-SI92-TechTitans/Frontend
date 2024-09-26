@@ -8,7 +8,6 @@ const guardar = () => {
 const cancelar = () => {
   emit('cancelar')
 }
-
 </script>
 
 <template>
@@ -19,23 +18,23 @@ const cancelar = () => {
 </template>
 
 <style scoped>
-.p-field{
+.p-field {
   display: flex;
   gap: 15px;
 }
 
-.p-button-success{
-  background-color: #E8C8C8;
-  color: #041C32;
-  border-color: #E8C8C8;
+.p-button-success {
+  background-color: #e8c8c8;
+  color: #041c32;
+  border-color: #e8c8c8;
   border-radius: 30px;
   font-size: 18px;
 }
 
-.p-button-secondary{
-  background-color: #E8C8C8;
-  color: #041C32;
-  border-color: #E8C8C8;
+.p-button-secondary {
+  background-color: #e8c8c8;
+  color: #041c32;
+  border-color: #e8c8c8;
   border-radius: 30px;
   font-size: 18px;
 }

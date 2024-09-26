@@ -13,10 +13,10 @@ export default {
   <div class="group-overview">
     <h2 class="group">Grupos</h2>
     <div class="group-list">
-      <GroupCard/>
+      <GroupCard />
     </div>
     <router-link to="/grupo/crear-grupo">
-      <input type="button" value="Crear grupo" class="btn-create"/>
+      <input type="button" value="Crear grupo" class="btn-create" />
     </router-link>
   </div>
 </template>
