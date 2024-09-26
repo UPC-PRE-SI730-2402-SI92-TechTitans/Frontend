@@ -31,37 +31,37 @@ const onSubmit = () => {
   }
 
   const { id: omitId, ...newContactoData } = form
-    contactoApiService
-      .save(newContactoData)
-      .then((response) => {
-        if (response.status == 201) {
-          router.push('/contacto')
-        }
-        emit('guardar')
-      })
-      .catch((error) => {
-        console.error('Error:', error)
-      })
+  contactoApiService
+    .save(newContactoData)
+    .then((response) => {
+      if (response.status == 201) {
+        router.push('/contacto')
+      }
+      emit('guardar')
+    })
+    .catch((error) => {
+      console.error('Error:', error)
+    })
+}
+
+onMounted(() => {
+  if (id.value) {
+    contactoApiService.get(id.value).then((response) => {
+      const contactoData = response.data
+
+      form.name = contactoData.name
+      form.email = contactoData.email
+      form.id = contactoData.id
+    })
   }
+})
 
-  onMounted(() => {
-    if (id.value) {
-      contactoApiService.get(id.value).then((response) => {
-        const contactoData = response.data
+const onCancel = () => {
+  form.name = ''
+  form.email = ''
+  form.id = 0
 
-        form.name = contactoData.name
-        form.email = contactoData.email
-        form.id = contactoData.id
-      })
-    }
-  })
-
-  const onCancel = () => {
-    form.name = ''
-    form.email = ''
-    form.id = 0
-
-    emit('cancelar')
+  emit('cancelar')
 }
 </script>
 
@@ -102,8 +102,8 @@ const onSubmit = () => {
   padding-top: 40px;
 }
 
-h1{
+h1 {
   text-align: center;
-  color: #B1375B;
+  color: #b1375b;
 }
 </style>

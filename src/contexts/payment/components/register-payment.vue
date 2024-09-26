@@ -1,11 +1,10 @@
 <script>
-
 import ParticipantList from '@/components/Groups/ParticipantList.vue'
 
 export default {
   name: 'RegisterPayment',
   components: { ParticipantList }
-};
+}
 </script>
 
 <template>
@@ -21,7 +20,7 @@ export default {
       </div>
       <div class="form-item">
         <label for="participants" class="item-label">Participantes</label>
-        <ParticipantList/>
+        <ParticipantList />
       </div>
       <div class="form-item">
         <label for="name" class="item-label">Monto</label>
@@ -76,9 +75,10 @@ export default {
 }
 .item-label {
   color: #bfbfbf;
-  font-size:0.77em;
+  font-size: 0.77em;
 }
-#name, #description {
+#name,
+#description {
   width: 100%;
   padding: 6px 12px;
   border: none;
@@ -88,14 +88,15 @@ export default {
   color: inherit;
   margin: 3px 0 20px 0;
 }
-#name, #description:focus {
+#name,
+#description:focus {
   outline: none;
 }
 #description {
   font-family: sans-serif;
   min-width: 100%;
   resize: none;
-  min-height:100px;
+  min-height: 100px;
 }
 
 .form-actions {
@@ -116,7 +117,8 @@ export default {
   color: #444;
   cursor: pointer;
 }
-.button-create, .button-cancel {
+.button-create,
+.button-cancel {
   font-size: 0.9rem;
   transition: background-color 0.3s;
 }

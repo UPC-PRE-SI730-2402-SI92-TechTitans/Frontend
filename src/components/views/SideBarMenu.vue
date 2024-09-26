@@ -54,7 +54,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 170px;;
+  min-width: 170px;
 }
 .sidebar-list {
   text-align: center;
