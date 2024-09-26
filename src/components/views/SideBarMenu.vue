@@ -77,4 +77,23 @@ export default {
 .item-link:focus {
   color: #fff;
 }
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  .sidebar-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 5px;
+  }
+  .list-item {
+    padding: 20px;
+  }
+}
 </style>
