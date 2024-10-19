@@ -1,5 +1,5 @@
 <script>
-import GroupCard from '../GroupCard.vue'
+import GroupCard from '../components/group-card.component.vue'
 
 export default {
   name: 'GroupOverview',

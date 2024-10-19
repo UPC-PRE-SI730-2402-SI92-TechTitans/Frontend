@@ -7,7 +7,7 @@ export default {
 <template>
   <div class="start-page">
     <h1>Finance Guard</h1>
-    <img src="@/assets/FinanceGuardLogo.png" alt="Finance Guard Logo">
+    <img src="../../../assets/FinanceGuardLogo.png" alt="Finance Guard Logo">
     <section class="section-one">
       <h2 class="start-subtitle">¿Quines somos?</h2>
       <p class="section-one-text"><br>

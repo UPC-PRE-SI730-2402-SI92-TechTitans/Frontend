@@ -1,8 +1,8 @@
 <script>
-import ParticipantList from '../ParticipantList.vue';
+import ParticipantList from '../components/participant-list.component.vue';
 
 export default {
-  name: 'GroupCreateView',
+  name: 'CreateGroup',
   components: {
     ParticipantList
   }

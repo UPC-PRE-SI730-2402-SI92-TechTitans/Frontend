@@ -1,5 +1,5 @@
 <script>
-import SidebarMenu from './components/views/SideBarMenu.vue'
+import SidebarMenu from '@/layouts/the-sidebar.vue'
 
 export default {
   components: {

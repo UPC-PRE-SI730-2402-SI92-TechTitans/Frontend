@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import GroupOverview from '../components/Groups/views/GroupOverview.vue';
-import GroupDetailView from '../components/Groups/views/GroupDetailView.vue';
-import GroupCreateView from '../components/Groups/views/GroupCreateView.vue';
-import StartPageView from '../components/views/StartPageView.vue';
+import GroupOverview from '@/contexts/groups/pages/group-overview.page.vue';
+import GroupDetailView from '@/contexts/groups/pages/group-detail.page.vue';
+import GroupCreateView from '@/contexts/groups/pages/create-group.page.vue';
+import StartPageView from '@/contexts/shared/pages/the-home.page.vue';
 
 const routes = [
   { path: '/', name: 'Home', component: StartPageView },

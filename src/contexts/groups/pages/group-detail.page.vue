@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'GroupDetailView',
+  name: 'GroupDetail',
   props: ['id'],
   computed: {
     group() {

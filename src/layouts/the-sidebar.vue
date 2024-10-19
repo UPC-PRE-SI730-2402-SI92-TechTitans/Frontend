@@ -1,6 +1,21 @@
 <script>
+import { useI18n } from 'vue-i18n'
+
 export default {
-  name: 'SidebarMenu'
+  name: 'SidebarMenu',
+  setup() {
+    const { locale } = useI18n()
+
+    const currentLang = locale.value
+
+    const changeLang = (lang) => {
+      locale.value = lang
+    }
+    return {
+      currentLang,
+      changeLang
+    }
+  }
 }
 </script>
 
@@ -37,6 +52,22 @@ export default {
         <router-link to="/analisis-pagos" class="item-link">Análisis de pagos</router-link>
       </li>
     </ul>
+    <div class="bottom-section">
+      <pv-button
+        label="EN"
+        :class="{ 'active-lang': currentLang === 'en' }"
+        @click="changeLang('en')"
+        aria-label="Switch language to English"
+        aria-description="Click this button to change the language to English"
+      />
+      <pv-button
+        label="ES"
+        :class="{ 'active-lang': currentLang === 'es' }"
+        @click="changeLang('es')"
+        aria-label="Switch language to Spanish"
+        aria-description="Click this button to change the language to Spanish"
+      />
+    </div>
   </div>
 </template>
 
@@ -76,5 +107,14 @@ export default {
 }
 .item-link:focus {
   color: #fff;
+}
+
+.bottom-section .pv-button {
+  position: relative;
+  bottom: 20px;
+}
+.active-lang {
+  font-weight: bold;
+  border: 1px solid #ccc;
 }
 </style>
