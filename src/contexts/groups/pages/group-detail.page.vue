@@ -18,16 +18,16 @@ export default {
 
 <template>
   <div class="group-details">
-    <h2 class="group-title">Detalles del Grupo: {{ group.name }}</h2>
-    <p class="group-creation-date">Fecha de creación: {{ group.creationDate }}</p>
+    <h2 class="group-title">{{ $t('groups.groupDetail.title') }} {{ group.name }}</h2>
+    <p class="group-creation-date">{{ $t('groups.groupDetail.creationDate') }} {{ group.creationDate }}</p>
 
-    <h3 class="subtitle">Gastos</h3>
+    <h3 class="subtitle">{{ $t('groups.groupDetail.expenses') }}</h3>
     <table class="table">
       <thead class="table-head">
         <tr>
-          <th class="table-items">Participante</th>
-          <th class="table-items">Cantidad</th>
-          <th class="table-items">Fecha</th>
+          <th class="table-items">{{ $t('groups.groupDetail.participant') }}</th>
+          <th class="table-items">{{ $t('groups.groupDetail.amount') }}</th>
+          <th class="table-items">{{ $t('groups.groupDetail.date') }}</th>
         </tr>
       </thead>
       <tbody class="table-body">
@@ -39,13 +39,13 @@ export default {
       </tbody>
     </table>
 
-    <h3 class="subtitle">Saldo total</h3>
-    <p class="total-debt">Pago pendiente <span>{{ totalDebt }}$</span></p>
+    <h3 class="subtitle">{{ $t('groups.groupDetail.totalBalance') }}</h3>
+    <p class="total-debt">{{ $t('groups.groupDetail.pendingPayment') }} <span>{{ totalDebt }}$</span></p>
     <table class="table">
       <thead class="table-head">
         <tr>
-          <th class="table-items">Participante</th>
-          <th class="table-items">Pendiente</th>
+          <th class="table-items">{{ $t('groups.groupDetail.participant') }}</th>
+          <th class="table-items">{{ $t('groups.groupDetail.pending') }}</th>
         </tr>
       </thead>
       <tbody class="table-body">

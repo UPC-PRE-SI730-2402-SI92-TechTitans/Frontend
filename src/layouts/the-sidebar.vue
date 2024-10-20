@@ -22,47 +22,36 @@ export default {
 <template>
   <div class="sidebar">
     <ul class="sidebar-list">
-      <li class="list-item"><router-link to="/" class="item-link">Inicio</router-link></li>
-      <li class="list-item"><router-link to="/grupos" class="item-link">Grupos</router-link></li>
       <li class="list-item">
-        <router-link to="/registro-gastos" class="item-link">Registro de gastos</router-link>
+        <router-link to="/" class="item-link">{{ $t('sidebar.home') }}</router-link>
       </li>
       <li class="list-item">
-        <router-link to="/nuevo-gasto" class="item-link">Nuevo gasto</router-link>
+        <router-link to="/groups" class="item-link">{{ $t('sidebar.groups') }}</router-link>
       </li>
       <li class="list-item">
-        <router-link to="/registrar-pago" class="item-link">Registrar pago</router-link>
+        <router-link to="/register-payment" class="item-link">{{ $t('sidebar.registerPayment') }}</router-link>
       </li>
       <li class="list-item">
-        <router-link to="/historial-gastos" class="item-link">Historial de gastos</router-link>
+        <router-link to="/edit-payment" class="item-link">{{ $t('sidebar.editPayment') }}</router-link>
       </li>
       <li class="list-item">
-        <router-link to="/informe-gastos" class="item-link">Informe de gastos</router-link>
+        <router-link to="/transactions" class="item-link">{{ $t('sidebar.transactions') }}</router-link>
       </li>
       <li class="list-item">
-        <router-link to="/reportes" class="item-link">Reportes</router-link>
-      </li>
-      <li class="list-item">
-        <router-link to="/contactos" class="item-link">Contactos</router-link>
-      </li>
-      <li class="list-item">
-        <router-link to="/division-gastos" class="item-link">División de gastos</router-link>
-      </li>
-      <li class="list-item">
-        <router-link to="/analisis-pagos" class="item-link">Análisis de pagos</router-link>
+        <router-link to="/contacts" class="item-link">{{ $t('sidebar.contacts') }}</router-link>
       </li>
     </ul>
     <div class="bottom-section">
       <pv-button
-        label="EN"
-        :class="{ 'active-lang': currentLang === 'en' }"
+        label="En"
+        class="switch"
         @click="changeLang('en')"
         aria-label="Switch language to English"
         aria-description="Click this button to change the language to English"
       />
       <pv-button
-        label="ES"
-        :class="{ 'active-lang': currentLang === 'es' }"
+        label="Es"
+        class="switch"
         @click="changeLang('es')"
         aria-label="Switch language to Spanish"
         aria-description="Click this button to change the language to Spanish"
@@ -80,7 +69,7 @@ export default {
   height: 100dvh;
   background-color: #3a4f63;
   color: #ddd;
-  padding: 10px 20px;
+  padding: 0 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -92,7 +81,7 @@ export default {
   list-style: none;
 }
 .list-item {
-  margin: 1.6rem 0;
+  margin: 2rem 0;
 }
 .item-link {
   color: #cfcfcf;
@@ -109,12 +98,17 @@ export default {
   color: #fff;
 }
 
-.bottom-section .pv-button {
+.switch {
   position: relative;
-  bottom: 20px;
-}
-.active-lang {
+  bottom: -100px;
   font-weight: bold;
-  border: 1px solid #ccc;
+  border: 1px solid #333;
+  background-color: #48e;
+  padding: 5px 10px;
+  color: white;
+  cursor: pointer;
+  margin-right: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 </style>

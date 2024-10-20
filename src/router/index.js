@@ -6,14 +6,14 @@ import StartPageView from '@/contexts/shared/pages/the-home.page.vue';
 
 const routes = [
   { path: '/', name: 'Home', component: StartPageView },
-  { path: '/grupos', name: 'Groups', component: GroupOverview },
+  { path: '/groups', name: 'Groups', component: GroupOverview },
   {
-    path: '/grupo/:id',
+    path: '/group/:id',
     name: 'GroupDetailView',
     component: GroupDetailView,
     props: true
   },
-  { path: '/grupo/crear-grupo', name: 'GroupCreate', component: GroupCreateView }
+  { path: '/group/create-group', name: 'GroupCreate', component: GroupCreateView }
 ]
 
 const router = createRouter({

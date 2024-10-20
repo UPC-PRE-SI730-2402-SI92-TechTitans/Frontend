@@ -7,7 +7,7 @@ export default {
 <template>
   <div class="participant-list-container">
     <div class="add-participant">
-      <input type="text" placeholder="Nombre del participante" class="participant-name-input"/>
+      <input type="text" .placeholder="$t('groups.createGroup.placeholderParticipants')" class="participant-name-input"/>
       <button type="button" class="material-symbols-outlined" title="Agregar participante">Add</button>
     </div>
     <div class=".remove-participant">
