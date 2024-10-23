@@ -28,7 +28,7 @@ export default {
         <router-link to="/reportes" class="item-link">Reportes</router-link>
       </li>
       <li class="list-item">
-        <router-link to="/contacto" class="item-link">Contactos</router-link>
+        <router-link to="/contact" class="item-link">Contactos</router-link>
       </li>
       <li class="list-item">
         <router-link to="/division-gastos" class="item-link">División de gastos</router-link>
