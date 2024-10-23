@@ -1,33 +1,33 @@
 <script setup>
 
 import { onBeforeMount, ref } from 'vue'
-import ContactoList from '@/contexts/contacto/components/contacto-list.vue'
-import ContactoForm from '@/contexts/contacto/components/contacto-form.vue'
-import { Contacto } from '../models/contacto-entity.js'
-import { ContactoApiService } from '@/contexts/contacto/services/contacto-api.js'
+import ContactList from '@/contexts/contacto/components/contact-list.vue'
+import ContactForm from '@/contexts/contacto/components/contact-form.vue'
+import { Contact } from '../models/contact-entity.js'
+import { ContactApiService } from '@/contexts/contacto/services/contact-api.js'
 
-const contactoApiService = new ContactoApiService()
+const contactApiService = new ContactApiService()
 
-const contactos = ref([])
+const contacts = ref([])
 
-const selectedContacto = ref({})
+const selectedContact = ref({})
 const isFormVisible = ref(false)
 const isEdit = ref(false)
 
-const loadForm = (contacto) => {
-  selectedContacto.value = { ...contacto }
+const loadForm = (contact) => {
+  selectedContact.value = { ...contact }
   isFormVisible.value = true
   isEdit.value = true
 }
 
 const showCreateForm = () => {
-  selectedContacto.value = new Contacto()
+  selectedContact.value = new Contact()
   isFormVisible.value = true
   isEdit.value = false
 }
 
-const saveContacto = async () => {
-  await loadContactos()
+const saveContact = async () => {
+  await loadContacts()
   isFormVisible.value = false
 }
 
@@ -35,51 +35,41 @@ const cancelForm = () => {
   isFormVisible.value = false
 }
 
-const deleteContacto = async (id) => {
-  await contactoApiService.delete(id).then(() => {
-    loadContactos()
+const deleteContact = async (id) => {
+  await contactApiService.delete(id).then(() => {
+    loadContacts()
   })
 }
 
-const loadContactos = async () => {
-  const response = await contactoApiService.getAll()
-  contactos.value = response.data
+const loadContacto = async () => {
+  const response = await contactApiService.getAll()
+  contacts.value = response.data
 }
 
 onBeforeMount(async () => {
-  await loadContactos()
+  await loadContacts()
 })
 </script>
 
 <template>
-  <div class="container">
-    <div>
-      <ContactoList
-        v-if="!isFormVisible"
-        :contactos="contactos"
-        @edit="loadForm"
-        @delete="deleteContacto"
-        @create="showCreateForm"
-      />
+  <div>
+    <ContactList
+      v-if="!isFormVisible"
+      :contacts="contacts"
+      @edit="loadForm"
+      @delete="deleteContact"
+      @create="showCreateForm"
+    />
 
-      <ContactoForm
-        v-else
-        :contacto="selectedContacto"
-        :isEdit="isEdit"
-        @guardar="saveContacto"
-        @cancelar="cancelForm"
-      />
-    </div>
+    <ContactForm
+      v-else
+      :contact="selectedContact"
+      :isEdit="isEdit"
+      @save="saveContact"
+      @cancel="cancelForm"
+    />
   </div>
 </template>
 
 <style scoped>
-.container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
 </style>
