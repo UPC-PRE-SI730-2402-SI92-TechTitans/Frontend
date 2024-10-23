@@ -9,8 +9,8 @@ import { onMounted, reactive, ref } from 'vue'
 import router from '@/router/index.js'
 
 const routes = useRoute()
-const emit = defineEmits(['cancelar'])
-const form = reactive(new Contacto())
+const emit = defineEmits(['cancel'])
+const form = reactive(new Contact())
 const contactApiService = new ContactApiService()
 const id = ref(routes.params.id || '')
 
