@@ -41,7 +41,7 @@ const deleteContact = async (id) => {
   })
 }
 
-const loadContacto = async () => {
+const loadContacts = async () => {
   const response = await contactApiService.getAll()
   contacts.value = response.data
 }
