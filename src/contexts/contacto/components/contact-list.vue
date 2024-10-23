@@ -3,7 +3,7 @@ import { defineProps, defineEmits } from 'vue'
 import 'primeicons/primeicons.css'
 
 const props = defineProps({
-  contactos: {
+  contacts: {
     type: Array,
     required: true
   }
@@ -11,7 +11,7 @@ const props = defineProps({
 
 const emit = defineEmits(['edit', 'delete', 'create'])
 
-const deleteContacto = (id) => {
+const deleteContact = (id) => {
   emit('delete', id)
 }
 
@@ -22,37 +22,37 @@ const showCreateForm = () => {
 
 <template>
 <h2>Contactos</h2>
-<div class="contactos-container">
-  <li v-for="contacto in contactos" :key="contacto.id || contacto.name" class="cards">
-    <pv-card class="contacto-card">
+<div class="contacts-container">
+  <li v-for="contact in contacts" :key="contact.id || contact.name" class="cards">
+    <pv-card class="contact-card">
       <template #header>
-        <pv-avatar icon="pi pi-user" size="xlarge" shape="circle" class="icono">
+        <pv-avatar icon="pi pi-user" size="xlarge" shape="circle" class="icon">
         </pv-avatar>
       </template>
       <template #content>
-        Nombre: {{ contacto.name || '' }}
+        Nombre: {{ contact.name || '' }}
         <br />
-        Correo electrónico: {{ contacto.email || '' }}
+        Correo electrónico: {{ contact.email || '' }}
       </template>
       <template #footer>
-        <div class="botones">
+        <div class="buttons">
           <router-link
-            v-if="contacto.id"
-            :to="{ name: 'updateContacto', params: { id: contacto.id } }">Editar</router-link>
+            v-if="contact.id"
+            :to="{ name: 'updateContact', params: { id: contact.id } }">Editar</router-link>
 
           <pv-button
-            v-if="contacto.id"
-            @click="deleteContacto(contacto.id)"
+            v-if="contact.id"
+            @click="deleteContact(contact.id)"
             severity="danger"
-            class="eliminar-boton"
+            class="delete-button"
             label="Eliminar" />
         </div>
       </template>
     </pv-card>
   </li>
 </div>
-<div class="agregar-boton">
-  <pv-button @click="showCreateForm" label="Añadir contacto" class="agregar-contacto" />
+<div class="add-button">
+  <pv-button @click="showCreateForm" label="Añadir contacto" class="add-contact" />
 
 </div>
 </template>
@@ -65,7 +65,7 @@ h2 {
   font-size: 40px;
 }
 
-.contacto-card{
+.contact-card{
   max-width: 350px;
   text-align: center;
   margin: 10px;
@@ -76,21 +76,21 @@ h2 {
   justify-content: center;
 }
 
-.contactos-container{
+.contacts-container{
   margin-right: 200px;
   margin-left: 200px;
 
 }
 
-.botones{
+.buttons{
   margin: 8px;
 }
 
-.eliminar-boton{
+.delete-button{
   margin-left: 5px;
 }
 
-.agregar-contacto{
+.add-contact{
   justify-content: center;
   text-align: center;
   align-items: center;
@@ -103,11 +103,11 @@ h2 {
   font-size: 18px;
 }
 
-.icono{
+.icon{
   margin-top: 10px;
 }
 
-.agregar-boton{
+.add-button{
   text-align: center;
 }
 </style>
