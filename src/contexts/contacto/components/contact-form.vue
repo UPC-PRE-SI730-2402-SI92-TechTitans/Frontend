@@ -1,9 +1,9 @@
 <script setup>
-import ContactoName from '@/contexts/contacto/components/contacto-name.vue'
-import ContactoEmail from '@/contexts/contacto/components/contacto-email.vue'
+import ContactName from '@/contexts/contacto/components/contact-name.vue'
+import ContactEmail from '@/contexts/contacto/components/contact-email.vue'
 import FormActions from '@/contexts/contacto/components/form-actions.vue'
-import { Contacto } from '../models/contacto-entity.js'
-import { ContactoApiService } from '@/contexts/contacto/services/contacto-api.js'
+import { Contact } from '../models/contacto-entity.js'
+import { ContactApiService } from '@/contexts/contacto/services/contact-api.js'
 import { useRoute } from 'vue-router'
 import { onMounted, reactive, ref } from 'vue'
 import router from '@/router/index.js'
@@ -11,18 +11,18 @@ import router from '@/router/index.js'
 const routes = useRoute()
 const emit = defineEmits(['cancelar'])
 const form = reactive(new Contacto())
-const contactoApiService = new ContactoApiService()
+const contactApiService = new ContactApiService()
 const id = ref(routes.params.id || '')
 
 const onSubmit = () => {
   if (id.value !== '') {
-    contactoApiService
+    contactApiService
       .update(id.value, form)
       .then((response) => {
         if (response.status == 200) {
-          router.push('/contacto')
+          router.push('/contact')
         }
-        emit('guardar')
+        emit('save')
       })
       .catch((error) => {
         console.error('Error:', error)
@@ -30,14 +30,14 @@ const onSubmit = () => {
     return
   }
 
-  const { id: omitId, ...newContactoData } = form
-    contactoApiService
-      .save(newContactoData)
+  const { id: omitId, ...newContactData } = form
+    contactApiService
+      .save(newContactData)
       .then((response) => {
         if (response.status == 201) {
-          router.push('/contacto')
+          router.push('/contact')
         }
-        emit('guardar')
+        emit('save')
       })
       .catch((error) => {
         console.error('Error:', error)
@@ -46,12 +46,12 @@ const onSubmit = () => {
 
   onMounted(() => {
     if (id.value) {
-      contactoApiService.get(id.value).then((response) => {
-        const contactoData = response.data
+      contactApiService.get(id.value).then((response) => {
+        const contactData = response.data
 
-        form.name = contactoData.name
-        form.email = contactoData.email
-        form.id = contactoData.id
+        form.name = contactData.name
+        form.email = contactData.email
+        form.id = contactData.id
       })
     }
   })
@@ -61,30 +61,26 @@ const onSubmit = () => {
     form.email = ''
     form.id = 0
 
-    emit('cancelar')
+    emit('cancel')
 }
 </script>
 
 <template>
-  <div class="contacto-form-container">
-    <form @submit.prevent="onSubmit" class="form-container">
-      <h1>Nuevo contacto</h1>
-      <div class="form-group">
-        <contacto-name v-model="form.name"></contacto-name>
-      </div>
-      <div class="form-group">
-        <contacto-email v-model="form.email"></contacto-email>
-      </div>
-      <div class="form-actions">
-        <form-actions @guardar="onSubmit" @cancelar="onCancel"></form-actions>
-      </div>
-    </form>
-  </div>
+  <form @submit.prevent="onSubmit" class="form-container">
+    <h1>Nuevo contacto</h1>
+    <div class="form-group">
+      <contact-name v-model="form.name"></contact-name>
+    </div>
+    <div class="form-group">
+      <contact-email v-model="form.email"></contact-email>
+    </div>
+    <div class="form-actions">
+      <form-actions @save="onSubmit" @cancel="onCancel"></form-actions>
+    </div>
+  </form>
 </template>
 
 <style scoped>
-.contacto-form-container {
-}
 .form-container {
   display: flex;
   flex-direction: column;
