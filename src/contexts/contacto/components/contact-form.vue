@@ -2,7 +2,7 @@
 import ContactName from '@/contexts/contacto/components/contact-name.vue'
 import ContactEmail from '@/contexts/contacto/components/contact-email.vue'
 import FormActions from '@/contexts/contacto/components/form-actions.vue'
-import { Contact } from '../models/contacto-entity.js'
+import { Contact } from '../models/contact-entity.js'
 import { ContactApiService } from '@/contexts/contacto/services/contact-api.js'
 import { useRoute } from 'vue-router'
 import { onMounted, reactive, ref } from 'vue'
