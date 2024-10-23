@@ -1,20 +1,20 @@
 <script setup>
-const emit = defineEmits(['guardar', 'cancelar'])
+const emit = defineEmits(['save', 'cancel'])
 
-const guardar = () => {
-  emit('guardar')
+const save = () => {
+  emit('save')
 }
 
 const cancelar = () => {
-  emit('cancelar')
+  emit('cancel')
 }
 
 </script>
 
 <template>
   <div class="p-field">
-    <pv-button label="Guardar" @click="guardar" class="p-button-success"></pv-button>
-    <pv-button label="Cancelar" @click="cancelar" class="p-button-secondary"></pv-button>
+    <pv-button label="Guardar" @click="save" class="p-button-success"></pv-button>
+    <pv-button label="Cancelar" @click="cancel" class="p-button-secondary"></pv-button>
   </div>
 </template>
 
