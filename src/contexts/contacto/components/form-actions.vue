@@ -5,7 +5,7 @@ const save = () => {
   emit('save')
 }
 
-const cancelar = () => {
+const cancel = () => {
   emit('cancel')
 }
 
