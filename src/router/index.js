@@ -3,8 +3,8 @@ import GroupOverview from '@/contexts/groups/pages/group-overview.page.vue';
 import GroupDetailView from '@/contexts/groups/pages/group-detail.page.vue';
 import GroupCreateView from '@/contexts/groups/pages/create-group.page.vue';
 import StartPageView from '@/contexts/shared/pages/the-home.page.vue';
-import ContactoForm from '@/contexts/contacto/components/contacto-form.vue'
-import ContactoManagement from '@/contexts/contacto/pages/contacto-management.vue'
+import ContactoForm from '@/contexts/contacto/components/contact-form.vue'
+import ContactoManagement from '@/contexts/contacto/pages/contact-management.vue'
 
 const routes = [
   { path: '/', name: 'Home', component: StartPageView },
