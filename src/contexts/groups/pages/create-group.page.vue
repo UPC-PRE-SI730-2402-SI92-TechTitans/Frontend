@@ -1,8 +1,8 @@
 <script>
-import ParticipantList from '../ParticipantList.vue';
+import ParticipantList from '../components/participant-list.component.vue';
 
 export default {
-  name: 'GroupCreateView',
+  name: 'CreateGroup',
   components: {
     ParticipantList
   }
@@ -12,25 +12,25 @@ export default {
 <template>
   <div class="create-group">
     <form class="create-group-form">
-      <h2 class="form-title">Crear un nuevo grupo</h2>
+      <h2 class="form-title">{{ $t('groups.createGroup.title') }}</h2>
       <div class="form-item">
-        <label for="name" class="item-label">Nombre del grupo</label>
+        <label for="name" class="item-label">{{ $t('groups.createGroup.name') }}</label>
         <input type="text" id="name" required />
       </div>
       <div class="form-item">
-        <label for="description" class="item-label">Descripción</label>
+        <label for="description" class="item-label">{{ $t('groups.createGroup.description') }}</label>
         <textarea id="description" required></textarea>
       </div>
       <div class="form-item">
-        <label for="participants" class="item-label">Participantes</label>
+        <label for="participants" class="item-label">{{ $t('groups.createGroup.participants') }}</label>
         <ParticipantList/>
       </div>
       <div class="form-actions">
-        <router-link to="/grupos">
-          <button type="button" class="button button-cancel">Cancelar</button>
+        <router-link to="/groups">
+          <button type="button" class="button button-cancel">{{ $t('groups.createGroup.buttonCancel') }}</button>
         </router-link>
-        <router-link to="/grupos">
-          <button type="submit" class="button button-create">Crear grupo</button>
+        <router-link to="/groups">
+          <button type="submit" class="button button-create">{{ $t('groups.createGroup.buttonCreate') }}</button>
         </router-link>
       </div>
     </form>

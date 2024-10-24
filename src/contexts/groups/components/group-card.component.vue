@@ -16,7 +16,7 @@ export default {
     <div class="group-image">
       <img src="https://picsum.photos/100/100" alt="Group image" class="item-image" />
     </div>
-    <router-link :to="`/grupo/${group.id}`">
+    <router-link :to="`/group/${group.id}`">
       <p class="group-name">{{ group.name }}</p>
     </router-link>
     <p class="group-creation-date">{{ group.creationDate }}</p>

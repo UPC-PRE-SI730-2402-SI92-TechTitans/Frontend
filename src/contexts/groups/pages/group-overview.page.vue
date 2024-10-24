@@ -1,5 +1,5 @@
 <script>
-import GroupCard from '../GroupCard.vue'
+import GroupCard from '../components/group-card.component.vue'
 
 export default {
   name: 'GroupOverview',
@@ -11,12 +11,12 @@ export default {
 
 <template>
   <div class="group-overview">
-    <h2 class="group">Grupos</h2>
+    <h2 class="group">{{ $t('groups.groupOverview.title') }}</h2>
     <div class="group-list">
       <GroupCard/>
     </div>
-    <router-link to="/grupo/crear-grupo">
-      <input type="button" value="Crear grupo" class="btn-create"/>
+    <router-link to="/group/create-group">
+      <input type="button" .value="$t('groups.groupOverview.buttonCreateGroup')" class="btn-create"/>
     </router-link>
   </div>
 </template>
