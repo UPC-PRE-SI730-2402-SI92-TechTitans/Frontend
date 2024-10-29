@@ -1,23 +1,39 @@
-<script>
-export default {
-  name: 'GroupDetail',
-  props: ['id'],
-  computed: {
-    group() {
-      const groupId = Number(this.id);
-      const group = this.$store.state.groups.find(group => group.id === groupId);
-      return group;
-    },
-    totalDebt() {
-      if (!this.group) return 0;
-      return Object.values(this.group.participants).reduce((total, participant) => total + participant.pendingPayment, 0);
-    }
+<script setup>
+import { ref, onMounted, computed } from 'vue';
+import { useRoute } from 'vue-router';
+import { GroupApiService } from '../services/group-api.js';
+
+const route = useRoute();
+const groupApiService = new GroupApiService();
+const group = ref(null);
+
+const loadGroup = async (id) => {
+  try {
+    const response = await groupApiService.get(id);
+    group.value = response.data;
+  } catch (error) {
+    console.error("Error al cargar el grupo:", error);
   }
-}
+};
+
+const totalDebt = computed(() => {
+  if (!group.value || !group.value.participants) return 0;
+  
+  return Object.values(group.value.participants).reduce((total, participant) => {
+    return total + (parseFloat(participant.pendingPayment) || 0);
+  }, 0);
+});
+
+onMounted(() => {
+  const groupId = route.params.id;
+  if (groupId) {
+    loadGroup(groupId);
+  }
+});
 </script>
 
 <template>
-  <div class="group-details">
+  <div class="group-details" v-if="group">
     <h2 class="group-title">{{ $t('groups.groupDetail.title') }} {{ group.name }}</h2>
     <p class="group-creation-date">{{ $t('groups.groupDetail.creationDate') }} {{ group.creationDate }}</p>
 
@@ -32,7 +48,7 @@ export default {
       </thead>
       <tbody class="table-body">
         <tr v-for="(participant, name) in group.participants" :key="name">
-          <td class="table-items">{{ name }}</td>
+          <td class="table-items">{{ participant.name }}</td>
           <td class="table-items">{{ participant.amount }} $</td>
           <td class="table-items">{{ participant.date }}</td>
         </tr>
@@ -40,7 +56,9 @@ export default {
     </table>
 
     <h3 class="subtitle">{{ $t('groups.groupDetail.totalBalance') }}</h3>
-    <p class="total-debt">{{ $t('groups.groupDetail.pendingPayment') }} <span>{{ totalDebt }}$</span></p>
+    <p class="total-debt">
+      {{ $t('groups.groupDetail.pendingPayment') }} <span>{{ totalDebt }}$</span>
+    </p>
     <table class="table">
       <thead class="table-head">
         <tr>
@@ -50,11 +68,15 @@ export default {
       </thead>
       <tbody class="table-body">
         <tr v-for="(participant, name) in group.participants" :key="name">
-          <td class="table-items">{{ name }}</td>
+          <td class="table-items">{{ participant.name }}</td>
           <td class="table-items">{{ participant.pendingPayment }} $</td>
         </tr>
       </tbody>
-    </table>
+    </table><br><br>
+
+    <router-link :to="{ name: 'groupExpenses', params: { id: group.id } }">
+      <button type="button" class="button-edit-expenses">{{ $t('groups.groupDetail.editExpensesButton') }}</button>
+    </router-link>
   </div>
 </template>
 
@@ -106,5 +128,18 @@ export default {
 .total-debt span {
   color: #000;
   font-weight: bold;
+}
+.button-edit-expenses {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #c55;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.button-edit-expenses:hover {
+  background-color: #a44;
 }
 </style>

@@ -1,22 +1,45 @@
-<script>
-import GroupCard from '../components/group-card.component.vue'
+<script setup>
+import { onBeforeMount, ref } from 'vue';
+import { useRouter } from 'vue-router';
+import GroupCard from '../components/group-card.component.vue';
+import { GroupApiService } from '../services/group-api.js';
 
-export default {
-  name: 'GroupOverview',
-  components: {
-    GroupCard
-  }
-}
+const router = useRouter();
+const groupApiService = new GroupApiService();
+const groups = ref([]);
+
+// Cargar todos los grupos
+const loadGroups = async () => {
+  const response = await groupApiService.getAll();
+  groups.value = response.data;
+};
+
+// Redirigir al formulario de edición con el ID del grupo
+const loadForm = (group) => {
+  router.push({ name: 'updateGroup', params: { id: group.id } });
+};
+
+// Eliminar un grupo
+const deleteGroup = async (id) => {
+  await groupApiService.delete(id);
+  await loadGroups(); // Actualizar la lista después de eliminar
+};
+
+onBeforeMount(loadGroups);
 </script>
 
 <template>
   <div class="group-overview">
     <h2 class="group">{{ $t('groups.groupOverview.title') }}</h2>
     <div class="group-list">
-      <GroupCard/>
+      <GroupCard :groups="groups" @edit="loadForm" @delete="deleteGroup" />
     </div>
     <router-link to="/group/create-group">
-      <input type="button" .value="$t('groups.groupOverview.buttonCreateGroup')" class="btn-create"/>
+      <input
+        type="button"
+        :value="$t('groups.groupOverview.buttonCreateGroup')"
+        class="btn-create"
+      />
     </router-link>
   </div>
 </template>

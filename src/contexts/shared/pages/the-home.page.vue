@@ -21,10 +21,10 @@ export default {
     
     <section class="section-two">
       <h2 class="start-subtitle">{{ $t('homePage.sectionTwo.startSubtitle') }}</h2>
-      <ul class="suscription-list">
-        <li class="suscription-item">{{ $t('homePage.sectionTwo.subscriptionList.item1') }}<br><br><span>S/ 9,90</span></li>
-        <li class="suscription-item">{{ $t('homePage.sectionTwo.subscriptionList.item2') }}<br><br><span>S/ 29,90</span></li>
-        <li class="suscription-item">{{ $t('homePage.sectionTwo.subscriptionList.item3') }}<br><br><span>S/ 169,90</span></li>
+      <ul class="subscription-list">
+        <li class="subscription-item">{{ $t('homePage.sectionTwo.subscriptionList.item1') }}<br><br><span>S/ 9,90</span></li>
+        <li class="subscription-item">{{ $t('homePage.sectionTwo.subscriptionList.item2') }}<br><br><span>S/ 29,90</span></li>
+        <li class="subscription-item">{{ $t('homePage.sectionTwo.subscriptionList.item3') }}<br><br><span>S/ 169,90</span></li>
       </ul>
     </section>
   </div>
@@ -63,7 +63,7 @@ h1 {
   padding: 20px;
 }
 
-.suscription-list {
+.subscription-list {
   display: flex;
   justify-content: space-around;
   width: 100%;
@@ -71,7 +71,7 @@ h1 {
   padding: 0;
   margin: 0;
 }
-.suscription-item {
+.subscription-item {
   background-color: #f5f5f5;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -81,7 +81,7 @@ h1 {
   letter-spacing: 0.4px;
   text-align: center;
 }
-.suscription-item span {
+.subscription-item span {
   font-size: 1.5em;
   color: #c55;
 }

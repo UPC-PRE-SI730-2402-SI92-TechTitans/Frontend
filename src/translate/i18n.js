@@ -31,29 +31,35 @@ const messages = {
     },
     groups: {
       createGroup: {
-        title: "Create a new group",
+        titleCreate: "Create a new group",
+        titleEdit: "Edit existing group",
         name: "Group name",
         description: "Description",
         participants: "Participants",
         placeholderParticipants: "Participant name",
         buttonCancel: "Cancel",
-        buttonCreate: "Create group"
+        buttonSave: "Save"
       },
       groupDetail: {
         title: "Group Details:",
         creationDate: "Creation date:",
-        expenses: "Expenses:",
+        expenses: "Expenses",
         participant: "Participant",
         amount: "Amount",
         date: "Date",
         totalBalance: "Total balance",
         pendingPayment: "Pending payment",
         pending: "Pending",
+        editExpensesButton: "Edit expenses",
+        expensesButtonCancel: "Cancel",
+        expensesButtonSave: "Save"
       },
       groupOverview: {
         title: "Groups",
         buttonCreateGroup: "Create group",
-      }
+        buttonEdit: "Edit",
+        buttonDelete: "Delete"
+      },
     }
   },
   es: {
@@ -86,29 +92,35 @@ const messages = {
     },
     groups: {
       createGroup: {
-        title: "Crear un nuevo grupo",
+        titleCreate: "Crear un nuevo grupo",
+        titleEdit: "Editar grupo existente",
         name: "Nombre del grupo",
         description: "Descripción",
         participants: "Participantes",
         placeholderParticipants: "Nombre del participante",
         buttonCancel: "Cancelar",
-        buttonCreate: "Crear grupo"
+        buttonSave: "Guardar"
       },
       groupDetail: {
         title: "Detalles del Grupo:",
         creationDate: "Fecha de creación:",
-        expenses: "Gastos:",
+        expenses: "Gastos",
         participant: "Participante",
         amount: "Cantidad",
         date: "Fecha",
         totalBalance: "Saldo total",
         pendingPayment: "Pago pendiente",
         pending: "Pendiente",
+        editExpensesButton: "Editar gastos",
+        expensesButtonCancel: "Cancelar",
+        expensesButtonSave: "Guardar"
       },
       groupOverview: {
         title: "Grupos",
         buttonCreateGroup: "Crear grupo",
-      }
+        buttonEdit: "Editar",
+        buttonDelete: "Eliminar"
+      },
     }
   }
 }
