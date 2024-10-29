@@ -1,83 +1,66 @@
-<script>
-export default {
-  name: 'ParticipantList',
-};
+<script setup>
+import { defineProps, defineEmits } from 'vue'
+
+const props = defineProps({
+  contacts: {
+    type: Array,
+    required: true
+  },
+  modelValue: {
+    type: Object,
+    default: () => ({})
+  }
+})
+
+const emit = defineEmits(['update:modelValue'])
+
+const toggleParticipant = (contact) => {
+  const updatedParticipants = { ...props.modelValue }
+
+  if (updatedParticipants[contact.id]) {
+    delete updatedParticipants[contact.id]
+  } else {
+    updatedParticipants[contact.id] = { ...contact, amount: 0, pendingPayment: 0 }
+  }
+
+  emit('update:modelValue', updatedParticipants)
+}
 </script>
 
 <template>
-  <div class="participant-list-container">
-    <div class="add-participant">
-      <input type="text" .placeholder="$t('groups.createGroup.placeholderParticipants')" class="participant-name-input"/>
-      <button type="button" class="material-symbols-outlined" title="Agregar participante">Add</button>
-    </div>
-    <div class=".remove-participant">
-      <ul class="participant-list">
-        <li class="participant-item">
-          <p class="participant-name">Jose</p>
-          <button type="button" class="material-symbols-outlined" title="Eliminar participante">Remove</button>
-        </li>
-        <li class="participant-item">
-          <p class="participant-name">Manuel</p>
-          <button type="button" class="material-symbols-outlined" title="Eliminar participante">Remove</button>
-        </li>
-        <li class="participant-item">
-          <p class="participant-name">Rosa</p>
-          <button type="button" class="material-symbols-outlined" title="Eliminar participante">Remove</button>
-        </li>
-      </ul>
+  <div class="participant-list">
+    <div
+      v-for="contact in contacts"
+      :key="contact.id"
+      @click="toggleParticipant(contact)"
+      class="participant-item"
+    >
+      <span>{{ contact.name }}</span>
+      <span v-if="modelValue[contact.id]" class="participant-item-check">✔️</span>
     </div>
   </div>
 </template>
 
 <style scoped>
-.participant-list-container {
-  margin-bottom: 15px;
-}
-
-.add-participant {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-.participant-name-input, .add-participant button, .participant-item button {
-  background-color: transparent;
-  color: inherit;
-  border: none;
-  box-shadow: 0 0 5px #0003;
-  border-radius: 4px;
-}
-.participant-name-input {
-  flex: 1;
-  padding: 6px 12px;
-  margin-right: 5px;
-}
-.participant-name-input:focus {
-  outline: none;
-}
-.add-participant button, .participant-item button {
-  padding: 1px;
-}
-.add-participant button:hover, .participant-item button:hover {
-  outline: 1px solid #0003;
-  cursor: pointer;
-}
-
-.remove-participant {
+.participant-list {
   display: flex;
   flex-direction: column;
-}
-.participant-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  gap: 5px;
+  margin: 5px 0 12px 0;
 }
 .participant-item {
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 7px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #555d;
 }
-.participant-name {
-  font-size: 1.1rem;
+.participant-item:hover {
+  background-color: #666d;
+}
+.participant-item .participant-item-check {
+  margin-top: -6.5px;
 }
 </style>

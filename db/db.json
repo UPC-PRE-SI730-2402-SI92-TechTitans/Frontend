@@ -2,13 +2,182 @@
   "contacts": [
     {
       "id": "2",
-      "name": "Pedro Sanche",
+      "name": "Pedro Sanchez",
       "email": "pedro_sanchez@gmail.com"
     },
     {
       "id": "3cbf",
       "name": "Juan",
       "email": "juan@gmail.com"
+    },
+    {
+      "id": "4",
+      "name": "Maria",
+      "email": "maria@gmail.com"
+    },
+    {
+      "id": "5",
+      "name": "Jose",
+      "email": "jose@gmail.com"
+    },
+    {
+      "id": "6",
+      "name": "Luis",
+      "email": "luis@gmail.com"
+    },
+    {
+      "id": "7",
+      "name": "Carlos",
+      "email": "carlos@gmail.com"
+    },
+    {
+      "id": "20",
+      "name": "Jorge",
+      "email": "jorge@gmail.com"
+    }
+  ],
+  "groups": [
+    {
+      "id": "1",
+      "name": "Grupo 1",
+      "creationDate": "2024-07-21",
+      "participants": {
+        "7": {
+          "name": "Carlos",
+          "amount": 212,
+          "date": "2024-10-29",
+          "pendingPayment": 2227,
+          "previousAmount": 211,
+          "previousPendingPayment": 2227
+        },
+        "8": {
+          "name": "Ana",
+          "amount": 114,
+          "date": "2024-10-29",
+          "pendingPayment": 104,
+          "previousAmount": 114,
+          "previousPendingPayment": 104
+        },
+        "9": {
+          "name": "Adriana",
+          "amount": 110,
+          "date": "",
+          "pendingPayment": 115,
+          "previousAmount": 110,
+          "previousPendingPayment": 115
+        },
+        "14": {
+          "name": "Elena",
+          "amount": "100",
+          "date": "",
+          "pendingPayment": 101,
+          "previousAmount": "100",
+          "previousPendingPayment": 101
+        },
+        "16": {
+          "name": "David",
+          "amount": "100",
+          "date": "2024-10-29",
+          "pendingPayment": 101,
+          "previousAmount": "100",
+          "previousPendingPayment": 101
+        },
+        "3cbf": {
+          "name": "Juan",
+          "amount": 51,
+          "date": "2024-10-29",
+          "pendingPayment": 498,
+          "previousAmount": 51,
+          "previousPendingPayment": 498
+        }
+      },
+      "description": " "
+    },
+    {
+      "id": "a24f",
+      "name": "Jaja",
+      "description": "asdgfd",
+      "participants": {
+        "2": {
+          "id": "2",
+          "name": "Pedro Sanchez",
+          "email": "pedro_sanchez@gmail.com",
+          "amount": 46,
+          "pendingPayment": 0,
+          "date": ""
+        },
+        "5": {
+          "id": "5",
+          "name": "Jose",
+          "email": "jose@gmail.com",
+          "amount": 1,
+          "pendingPayment": 2,
+          "date": ""
+        },
+        "6": {
+          "id": "6",
+          "name": "Luis",
+          "email": "luis@gmail.com",
+          "amount": 10,
+          "pendingPayment": 0,
+          "date": ""
+        },
+        "7": {
+          "id": "7",
+          "name": "Carlos",
+          "email": "carlos@gmail.com",
+          "amount": 10,
+          "pendingPayment": 0,
+          "date": ""
+        },
+        "3cbf": {
+          "id": "3cbf",
+          "name": "Juan",
+          "email": "juan@gmail.com",
+          "amount": 6,
+          "pendingPayment": 0,
+          "date": ""
+        }
+      },
+      "creationDate": "2024-10-29"
+    },
+    {
+      "id": "92bb",
+      "name": "123",
+      "description": "123123123",
+      "participants": {
+        "6": {
+          "id": "6",
+          "name": "Luis",
+          "email": "luis@gmail.com",
+          "amount": 1,
+          "pendingPayment": 5,
+          "date": "",
+          "previousAmount": 1,
+          "previousPendingPayment": 5
+        },
+        "7": {
+          "id": "7",
+          "name": "Carlos",
+          "email": "carlos@gmail.com",
+          "amount": 3,
+          "pendingPayment": 0,
+          "date": "",
+          "previousAmount": 3,
+          "previousPendingPayment": 0
+        },
+        "20": {
+          "id": "20",
+          "name": "Jorge",
+          "email": "jorge@gmail.com",
+          "amount": 1,
+          "pendingPayment": 1,
+          "date": "2024-10-29",
+          "previousAmount": 0,
+          "previousPendingPayment": 1
+        }
+      },
+      "creationDate": "2024-10-29"
     }
   ]
 }

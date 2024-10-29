@@ -20,7 +20,7 @@ const onSubmit = () => {
       .update(id.value, form)
       .then((response) => {
         if (response.status == 200) {
-          router.push('/contact')
+          router.push('/contacts')
         }
         emit('save')
       })
@@ -35,7 +35,7 @@ const onSubmit = () => {
       .save(newContactData)
       .then((response) => {
         if (response.status == 201) {
-          router.push('/contact')
+          router.push('/contacts')
         }
         emit('save')
       })
