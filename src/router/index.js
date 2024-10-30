@@ -3,8 +3,8 @@ import GroupOverview from '@/contexts/groups/pages/group-overview.page.vue';
 import GroupDetailView from '@/contexts/groups/pages/group-detail.page.vue';
 import GroupCreateView from '@/contexts/groups/pages/create-group.page.vue';
 import StartPageView from '@/contexts/shared/pages/the-home.page.vue';
-import ContactoForm from '@/contexts/contacto/components/contact-form.vue'
-import ContactoManagement from '@/contexts/contacto/pages/contact-management.vue'
+import ContactForm from '@/contexts/contacto/components/contact-form.vue'
+import ContactManagement from '@/contexts/contacto/pages/contact-management.vue'
 
 const routes = [
   { path: '/', name: 'Home', component: StartPageView },
@@ -16,9 +16,9 @@ const routes = [
     props: true
   },
   { path: '/group/create-group', name: 'GroupCreate', component: GroupCreateView },
-  { path: '/contacto', component: ContactoManagement },
-  { path: '/create-contacto', component: ContactoForm, name: 'createContacto' },
-  { path: '/update-contacto/:id', component: ContactoForm, name: 'updateContacto' }
+  { path: '/contacts', component: ContactoManagement },
+  { path: '/create-contact', component: ContactoForm, name: 'createContact' },
+  { path: '/update-contact/:id', component: ContactoForm, name: 'updateContact' }
 ]
 
 const router = createRouter({
