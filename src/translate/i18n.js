@@ -140,7 +140,7 @@ const messages = {
         title: 'Nuevo contacto',
         name: 'Nombre',
         email: 'Correo electrónico',
-        saveButton: 'Editar',
+        saveButton: 'Guardar',
         cancelButton: 'Cancelar'
       }
     }
