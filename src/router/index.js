@@ -16,9 +16,9 @@ const routes = [
     props: true
   },
   { path: '/group/create-group', name: 'GroupCreate', component: GroupCreateView },
-  { path: '/contacts', component: ContactoManagement },
-  { path: '/create-contact', component: ContactoForm, name: 'createContact' },
-  { path: '/update-contact/:id', component: ContactoForm, name: 'updateContact' }
+  { path: '/contacts', component: ContactManagement },
+  { path: '/create-contact', component: ContactForm, name: 'createContact' },
+  { path: '/update-contact/:id', component: ContactForm, name: 'updateContact' }
 ]
 
 const router = createRouter({
