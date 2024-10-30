@@ -21,7 +21,7 @@ const showCreateForm = () => {
 </script>
 
 <template>
-<h2>Contactos</h2>
+<h2>{{ $t('contacts.contactList.title')}}</h2>
 <div class="contacts-container">
   <li v-for="contact in contacts" :key="contact.id || contact.name" class="cards">
     <pv-card class="contact-card">
@@ -30,29 +30,28 @@ const showCreateForm = () => {
         </pv-avatar>
       </template>
       <template #content>
-        Nombre: {{ contact.name || '' }}
+        {{ $t('contacts.contactList.name')}}: {{ contact.name || '' }}
         <br />
-        Correo electrónico: {{ contact.email || '' }}
+        {{ $t('contacts.contactList.email')}}: {{ contact.email || '' }}
       </template>
       <template #footer>
         <div class="buttons">
           <router-link
             v-if="contact.id"
-            :to="{ name: 'updateContact', params: { id: contact.id } }">Editar</router-link>
+            :to="{ name: 'updateContact', params: { id: contact.id } }">{{ $t('contacts.contactList.editButton')}}</router-link>
 
           <pv-button
             v-if="contact.id"
             @click="deleteContact(contact.id)"
             severity="danger"
-            class="delete-button"
-            label="Eliminar" />
+            class="delete-button">{{ $t('contacts.contactList.deleteButton')}}</pv-button>
         </div>
       </template>
     </pv-card>
   </li>
 </div>
 <div class="add-button">
-  <pv-button @click="showCreateForm" label="Añadir contacto" class="add-contact" />
+  <pv-button @click="showCreateForm" class="add-contact">{{ $t('contacts.contactList.addButton')}}</pv-button>
 
 </div>
 </template>
