@@ -67,7 +67,7 @@ const onSubmit = () => {
 
 <template>
   <form @submit.prevent="onSubmit" class="form-container">
-    <h1>Nuevo contacto</h1>
+    <h1>{{ $t('contacts.contactForm.title')}}</h1>
     <div class="form-group">
       <contact-name v-model="form.name"></contact-name>
     </div>
@@ -85,7 +85,6 @@ const onSubmit = () => {
   display: flex;
   flex-direction: column;
   max-width: 600px;
-  margin: 0 auto;
 }
 
 .form-group {
