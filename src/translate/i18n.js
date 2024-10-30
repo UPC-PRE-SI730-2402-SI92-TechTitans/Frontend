@@ -54,6 +54,23 @@ const messages = {
         title: "Groups",
         buttonCreateGroup: "Create group",
       }
+    },
+    contacts: {
+      contactList: {
+        title: 'Contacts',
+        addButton: 'Add contact',
+        name: 'Name',
+        email: 'Email',
+        editButton: 'Edit',
+        deleteButton: 'Delete'
+      },
+      contactForm: {
+        title: 'New Contact',
+        name: 'Name',
+        email: 'Email',
+        saveButton: 'Save',
+        cancelButton: 'Cancel'
+      }
     }
   },
   es: {
@@ -108,6 +125,23 @@ const messages = {
       groupOverview: {
         title: "Grupos",
         buttonCreateGroup: "Crear grupo",
+      }
+    },
+    contacts: {
+      contactList: {
+        title: 'Contactos',
+        addButton: 'Añadir contacto',
+        name: 'Nombre',
+        email: 'Correo electrónico',
+        editButton: 'Editar',
+        deleteButton: 'Eliminar'
+      },
+      contactForm: {
+        title: 'Nuevo contacto',
+        name: 'Nombre',
+        email: 'Correo electrónico',
+        saveButton: 'Editar',
+        cancelButton: 'Cancelar'
       }
     }
   }
