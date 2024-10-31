@@ -66,30 +66,25 @@ const onSubmit = () => {
 </script>
 
 <template>
-  <div class="contact-form-container">
-    <form @submit.prevent="onSubmit" class="form-container">
-      <h1>Nuevo contacto</h1>
-      <div class="form-group">
-        <contact-name v-model="form.name"></contact-name>
-      </div>
-      <div class="form-group">
-        <contact-email v-model="form.email"></contact-email>
-      </div>
-      <div class="form-actions">
-        <form-actions @save="onSubmit" @cancel="onCancel"></form-actions>
-      </div>
-    </form>
-  </div>
+  <form @submit.prevent="onSubmit" class="form-container">
+    <h1>{{ $t('contacts.contactForm.title')}}</h1>
+    <div class="form-group">
+      <contact-name v-model="form.name"></contact-name>
+    </div>
+    <div class="form-group">
+      <contact-email v-model="form.email"></contact-email>
+    </div>
+    <div class="form-actions">
+      <form-actions @save="onSubmit" @cancel="onCancel"></form-actions>
+    </div>
+  </form>
 </template>
 
 <style scoped>
-.contact-form-container {
-}
 .form-container {
   display: flex;
   flex-direction: column;
   max-width: 600px;
-  margin: 0 auto;
 }
 
 .form-group {

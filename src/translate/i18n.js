@@ -58,7 +58,25 @@ const messages = {
         buttonCreateGroup: "Create group",
         buttonEdit: "Edit",
         buttonDelete: "Delete"
+      }
+      }
+    },
+    contacts: {
+      contactList: {
+        title: 'Contacts',
+        addButton: 'Add contact',
+        name: 'Name',
+        email: 'Email',
+        editButton: 'Edit',
+        deleteButton: 'Delete'
       },
+      contactForm: {
+        title: 'New Contact',
+        name: 'Name',
+        email: 'Email',
+        saveButton: 'Save',
+        cancelButton: 'Cancel'
+      }
     }
   },
   es: {
@@ -119,6 +137,24 @@ const messages = {
         buttonEdit: "Editar",
         buttonDelete: "Eliminar"
       },
+      }
+    },
+    contacts: {
+      contactList: {
+        title: 'Contactos',
+        addButton: 'Añadir contact',
+        name: 'Nombre',
+        email: 'Correo electrónico',
+        editButton: 'Editar',
+        deleteButton: 'Eliminar'
+      },
+      contactForm: {
+        title: 'Nuevo contact',
+        name: 'Nombre',
+        email: 'Correo electrónico',
+        saveButton: 'Guardar',
+        cancelButton: 'Cancelar'
+      }
     }
   }
 }

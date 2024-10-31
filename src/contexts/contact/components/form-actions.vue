@@ -13,8 +13,8 @@ const cancel = () => {
 
 <template>
   <div class="p-field">
-    <pv-button label="Guardar" @click="save" class="p-button-success"></pv-button>
-    <pv-button label="Cancelar" @click="cancel" class="p-button-secondary"></pv-button>
+    <pv-button @click="save" class="p-button-success">{{ $t('contacts.contactForm.saveButton')}}</pv-button>
+    <pv-button @click="cancel" class="p-button-secondary">{{ $t('contacts.contactForm.cancelButton')}}</pv-button>
   </div>
 </template>
 
