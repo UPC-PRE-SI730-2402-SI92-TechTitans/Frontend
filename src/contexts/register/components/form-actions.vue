@@ -3,7 +3,7 @@ const emit = defineEmits(['register', 'cancel'])
 
 const register = () => {
   emit('register')
-  alert("Se ha registrado correctamente, por favor inicie sesión.")
+  alert("You have successfully registered, please login.")
 }
 
 const cancel = () => {
@@ -13,8 +13,8 @@ const cancel = () => {
 
 <template>
   <div class="buttons">
-    <pv-button @click="register" class="p-button-success">Registrar</pv-button>
-    <RouterLink to="/login"><pv-button @click="cancel" class="p-button-secondary">Cancelar</pv-button></RouterLink>
+    <pv-button @click="register" class="p-button-success">Register</pv-button>
+    <RouterLink to="/login"><pv-button @click="cancel" class="p-button-secondary">Cancel</pv-button></RouterLink>
   </div>
 </template>
 
