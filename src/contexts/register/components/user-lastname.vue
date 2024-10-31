@@ -15,7 +15,7 @@ const updateValue = (event) => {
 
 <template>
   <div class="form">
-    <label for="lastname" class="lastname">Apellido</label>
+    <label for="lastname" class="lastname">Last name</label>
     <pv-input-text id="name" :value="modelValue" @input="updateValue"></pv-input-text>
   </div>
 </template>
@@ -26,7 +26,6 @@ const updateValue = (event) => {
 }
 
 .lastname{
-  margin-left: 60px;
   margin-right: 10px;
 }
 
