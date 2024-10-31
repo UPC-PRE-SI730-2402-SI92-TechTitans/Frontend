@@ -68,7 +68,7 @@ const onCancel = () => {
 <template>
   <div class="register-form">
     <form @submit.prevent="onSubmit" class="form-container">
-      <h1>Registro</h1>
+      <h1>Register</h1>
       <div class="form-group">
         <user-name v-model="form.name"></user-name>
       </div>
