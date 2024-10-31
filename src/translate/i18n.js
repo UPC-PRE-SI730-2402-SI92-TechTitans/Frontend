@@ -130,14 +130,14 @@ const messages = {
     contacts: {
       contactList: {
         title: 'Contactos',
-        addButton: 'Añadir contacto',
+        addButton: 'Añadir contact',
         name: 'Nombre',
         email: 'Correo electrónico',
         editButton: 'Editar',
         deleteButton: 'Eliminar'
       },
       contactForm: {
-        title: 'Nuevo contacto',
+        title: 'Nuevo contact',
         name: 'Nombre',
         email: 'Correo electrónico',
         saveButton: 'Guardar',
