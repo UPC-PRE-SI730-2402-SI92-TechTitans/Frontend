@@ -7,6 +7,8 @@ import ContactForm from '@/contexts/contact/components/contact-form.vue'
 import ContactManagement from '@/contexts/contact/pages/contact-management.vue'
 import GroupExpensesView from '@/contexts/expenses/pages/group-expenses.page.vue';
 import selectGroupExpenses from '@/contexts/expenses/pages/select-group-expenses.page.vue'
+import Login from '@/contexts/login/components/login.vue'
+import UserForm from '@/contexts/register/components/user-form.vue'
 
 const routes = [
   { path: '/', name: 'Home', component: StartPageView },
@@ -24,6 +26,8 @@ const routes = [
   { path: '/create-contact', component: ContactForm, name: 'createContact' },
   { path: '/update-contact/:id', component: ContactForm, name: 'updateContact' },
   { path: '/payments', component: selectGroupExpenses },
+  { path: '/login', component: Login, name: 'login'},
+  { path: '/register', component: UserForm, name: 'register'}
 ]
 
 const router = createRouter({
