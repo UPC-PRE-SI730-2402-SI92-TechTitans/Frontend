@@ -67,7 +67,7 @@ const onSubmit = () => {
 
 <template>
   <form @submit.prevent="onSubmit" class="form-container">
-    <h1>{{ $t('contacts.contactForm.title')}}</h1>
+    <h2 class="contact-form-title">{{ $t('contacts.contactForm.title')}}</h2>
     <div class="form-group">
       <contact-name v-model="form.name"></contact-name>
     </div>
@@ -87,6 +87,12 @@ const onSubmit = () => {
   max-width: 600px;
 }
 
+.contact-form-title {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #B1375B;
+  font-size: 2.1rem;
+}
 .form-group {
   margin-bottom: 10px;
 }
@@ -95,10 +101,5 @@ const onSubmit = () => {
   justify-content: center;
   display: flex;
   padding-top: 40px;
-}
-
-h1{
-  text-align: center;
-  color: #B1375B;
 }
 </style>

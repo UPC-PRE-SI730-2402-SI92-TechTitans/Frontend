@@ -59,7 +59,6 @@ const messages = {
         buttonEdit: "Edit",
         buttonDelete: "Delete"
       }
-      }
     },
     contacts: {
       contactList: {
@@ -92,7 +91,7 @@ const messages = {
       },
       sectionTwo: {
         startSubtitle: "Ventajas",
-        suscriptionList: {
+        subscriptionList: {
           item1: "Suscripción por un mes",
           item2: "Suscripción por un año",
           item3: "Suscripción empresarial"
@@ -136,7 +135,6 @@ const messages = {
         buttonCreateGroup: "Crear grupo",
         buttonEdit: "Editar",
         buttonDelete: "Eliminar"
-      },
       }
     },
     contacts: {
