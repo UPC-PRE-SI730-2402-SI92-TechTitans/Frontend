@@ -15,7 +15,7 @@ const updateValue = (event) => {
 
 <template>
   <div class="form">
-    <label for="email" class="email">Correo electrónico</label>
+    <label for="email" class="email">Email</label>
     <pv-input-text id="email" :value="modelValue" @input="updateValue"></pv-input-text>
   </div>
 </template>
@@ -27,6 +27,7 @@ const updateValue = (event) => {
 
 .email{
   margin-right: 10px;
+  margin-left: 27px;
 }
 
 input, select {
