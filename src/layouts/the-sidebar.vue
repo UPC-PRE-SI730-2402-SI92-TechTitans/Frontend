@@ -29,10 +29,7 @@ export default {
         <router-link to="/groups" class="item-link">{{ $t('sidebar.groups') }}</router-link>
       </li>
       <li class="list-item">
-        <router-link to="/register-payment" class="item-link">{{ $t('sidebar.registerPayment') }}</router-link>
-      </li>
-      <li class="list-item">
-        <router-link to="/edit-payment" class="item-link">{{ $t('sidebar.editPayment') }}</router-link>
+        <router-link to="/payments" class="item-link">{{ $t('sidebar.Payments') }}</router-link>
       </li>
       <li class="list-item">
         <router-link to="/transactions" class="item-link">{{ $t('sidebar.transactions') }}</router-link>

@@ -24,8 +24,7 @@ const messages = {
     sidebar: {
       home: "Home",
       groups: "Groups",
-      registerPayment: "Register payment",
-      editPayment: "Edit payment",
+      Payments: "Payments",
       transactions: "Transactions",
       contacts: "Contacts"
     },
@@ -85,8 +84,7 @@ const messages = {
     sidebar: {
       home: "Inicio",
       groups: "Grupos",
-      registerPayment: "Registrar pago",
-      editPayment: "Editar pago",
+      Payments: "Pagos",
       transactions: "Transacciones",
       contacts: "Contactos"
     },
@@ -113,7 +111,7 @@ const messages = {
         pending: "Pendiente",
         editExpensesButton: "Editar gastos",
         expensesButtonCancel: "Cancelar",
-        expensesButtonSave: "Guardar"
+        expensesButtonSave: "Guardar",
       },
       groupOverview: {
         title: "Grupos",

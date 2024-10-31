@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import { GroupApiService } from '../services/group-api.js';
+import { GroupApiService } from '../../groups/services/group-api.js';
 
 const route = useRoute();
 const router = useRouter();
@@ -14,8 +14,7 @@ const loadGroup = async (id) => {
     group.value = response.data;
 
     Object.values(group.value.participants).forEach((participant) => {
-      participant.previousAmount = participant.amount;
-      participant.previousPendingPayment = participant.pendingPayment;
+      participant.previousDate = participant.date;
     });
   } catch (error) {
     console.error("Error al cargar el grupo:", error);
@@ -24,15 +23,17 @@ const loadGroup = async (id) => {
 
 const saveExpenses = async () => {
   try {
-    const currentDate = new Date().toISOString().split('T')[0];
-
     for (const participant of Object.values(group.value.participants)) {
-      if (participant.amount !== participant.previousAmount) {
-        if (participant.amount > 0) {
-          participant.date = currentDate;
-        } else {
-          delete participant.date;
-        }
+      if (participant.date && participant.previousDate !== participant.date) {
+        const date = new Date(participant.date);
+        const day = String(date.getDate()).padStart(2, '0');
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const year = date.getFullYear();
+
+        participant.date = `${month}/${day}/${year}`;
+      }
+      if (participant.amount === 0) {
+        delete participant.date;
       }
     }
 
@@ -59,6 +60,7 @@ onMounted(() => {
         <tr>
           <th>{{ $t('groups.groupDetail.participant') }}</th>
           <th>{{ $t('groups.groupDetail.amount') }}</th>
+          <th>{{ $t('groups.groupDetail.date') }}</th>
           <th>{{ $t('groups.groupDetail.pendingPayment') }}</th>
         </tr>
       </thead>
@@ -67,6 +69,9 @@ onMounted(() => {
           <td>{{ participant.name }}</td>
           <td>
             <pv-input-number v-model="participant.amount" inputId="currency-us" showButtons mode="currency" currency="USD" locale="en-US" fluid class="input-number" />
+          </td>
+          <td>
+            <pv-date-picker v-model="participant.date" showIcon showButtonBar fluid :showOnFocus="false" />
           </td>
           <td>
             <pv-input-number v-model="participant.pendingPayment" inputId="minmax-buttons" showButtons mode="currency" currency="USD" locale="en-US" fluid class="input-number" />

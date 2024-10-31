@@ -32,51 +32,71 @@
       "name": "Grupo 1",
       "creationDate": "2024-07-21",
       "participants": {
+        "2": {
+          "id": "2",
+          "name": "Pedro Sanchez",
+          "email": "pedro_sanchez@gmail.com",
+          "amount": 3,
+          "pendingPayment": 0,
+          "previousAmount": 0,
+          "previousPendingPayment": 0,
+          "date": "10/03/2024"
+        },
+        "4": {
+          "id": "4",
+          "name": "Maria",
+          "email": "maria@gmail.com",
+          "amount": 11,
+          "pendingPayment": 5,
+          "previousAmount": 11,
+          "previousPendingPayment": 5,
+          "date": "04/10/2024",
+          "previousDate": "04/10/2024"
+        },
         "7": {
           "name": "Carlos",
-          "amount": 0,
+          "amount": 4,
           "pendingPayment": 2227,
-          "previousAmount": null,
-          "previousPendingPayment": 2227
+          "previousAmount": 4,
+          "previousPendingPayment": 2227,
+          "date": "18/10/2024",
+          "previousDate": "18/10/2024"
         },
         "8": {
           "name": "Ana",
-          "amount": 0,
+          "amount": 4,
           "pendingPayment": 107,
-          "previousAmount": 117,
-          "previousPendingPayment": 107
+          "previousAmount": 4,
+          "previousPendingPayment": 107,
+          "date": "02/10/2024",
+          "previousDate": "02/10/2024"
         },
         "9": {
           "name": "Adriana",
           "amount": 120,
-          "date": "2024-10-30",
+          "date": null,
           "pendingPayment": 115,
           "previousAmount": 120,
-          "previousPendingPayment": 115
+          "previousPendingPayment": 115,
+          "previousDate": null
         },
         "14": {
           "name": "Elena",
           "amount": 100,
-          "date": "2024-10-30",
+          "date": "10/24/2024",
           "pendingPayment": 101,
           "previousAmount": 100,
-          "previousPendingPayment": 101
+          "previousPendingPayment": 101,
+          "previousDate": "10/24/2024"
         },
         "16": {
           "name": "David",
           "amount": 100,
-          "date": "2024-10-30",
+          "date": null,
           "pendingPayment": 102,
           "previousAmount": 100,
-          "previousPendingPayment": 102
-        },
-        "3cbf": {
-          "name": "Juan",
-          "amount": 51,
-          "date": "2024-10-29",
-          "pendingPayment": 497,
-          "previousAmount": 51,
-          "previousPendingPayment": 497
+          "previousPendingPayment": 102,
+          "previousDate": null
         }
       },
       "description": " "
@@ -90,9 +110,11 @@
           "id": "2",
           "name": "Pedro Sanchez",
           "email": "pedro_sanchez@gmail.com",
-          "amount": 46,
+          "amount": 48,
           "pendingPayment": 0,
-          "date": ""
+          "date": "30/10/2024",
+          "previousAmount": 46,
+          "previousPendingPayment": 0
         },
         "5": {
           "id": "5",
@@ -100,7 +122,9 @@
           "email": "jose@gmail.com",
           "amount": 1,
           "pendingPayment": 2,
-          "date": ""
+          "date": "",
+          "previousAmount": 1,
+          "previousPendingPayment": 2
         },
         "6": {
           "id": "6",
@@ -108,15 +132,19 @@
           "email": "luis@gmail.com",
           "amount": 10,
           "pendingPayment": 0,
-          "date": ""
+          "date": "",
+          "previousAmount": 10,
+          "previousPendingPayment": 0
         },
         "7": {
           "id": "7",
           "name": "Carlos",
           "email": "carlos@gmail.com",
           "amount": 10,
-          "pendingPayment": 0,
-          "date": ""
+          "pendingPayment": 1,
+          "date": "NaN/NaN/NaN",
+          "previousAmount": 10,
+          "previousPendingPayment": 1
         },
         "3cbf": {
           "id": "3cbf",
@@ -124,7 +152,9 @@
           "email": "juan@gmail.com",
           "amount": 6,
           "pendingPayment": 0,
-          "date": ""
+          "date": "",
+          "previousAmount": 6,
+          "previousPendingPayment": 0
         }
       },
       "creationDate": "2024-10-29"

@@ -46,12 +46,6 @@ const deleteGroup = (id) => {
   margin: 0.5rem;
   overflow-wrap: anywhere;
 }
-.group-image {
-  width: 100px;
-  height: 100px;
-  background-color: #ddd;
-  margin: 10px 0;
-}
 .group-card a {
   text-decoration: none;
   color: inherit;

@@ -8,21 +8,18 @@ const router = useRouter();
 const groupApiService = new GroupApiService();
 const groups = ref([]);
 
-// Cargar todos los grupos
 const loadGroups = async () => {
   const response = await groupApiService.getAll();
   groups.value = response.data;
 };
 
-// Redirigir al formulario de edición con el ID del grupo
 const loadForm = (group) => {
   router.push({ name: 'updateGroup', params: { id: group.id } });
 };
 
-// Eliminar un grupo
 const deleteGroup = async (id) => {
   await groupApiService.delete(id);
-  await loadGroups(); // Actualizar la lista después de eliminar
+  await loadGroups();
 };
 
 onBeforeMount(loadGroups);
