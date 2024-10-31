@@ -9,65 +9,78 @@ import { onMounted, reactive, ref } from 'vue'
 import router from '@/router/index.js'
 
 const routes = useRoute()
-const emit = defineEmits(['cancel'])
+const emit = defineEmits(['cancel', 'save'])
 const form = reactive(new Contact())
 const contactApiService = new ContactApiService()
 const id = ref(routes.params.id || '')
 
+function generateUUID() {
+  let d = new Date().getTime();
+  let uuid = 'xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+    let r = (d + Math.random() * 16) % 16 | 0;
+    d = Math.floor(d / 16);
+    return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+  });
+  return uuid;
+}
+
 const onSubmit = () => {
   if (id.value !== '') {
+    form.userId = localStorage.getItem('userId');
+
     contactApiService
       .update(id.value, form)
       .then((response) => {
-        if (response.status == 200) {
+        if (response.status === 200) {
+          emit('save')
           router.push('/contacts')
         }
-        emit('save')
       })
       .catch((error) => {
-        console.error('Error:', error)
+        console.error('Error al actualizar contacto:', error)
       })
     return
   }
 
-  const { id: omitId, ...newContactData } = form
-    contactApiService
-      .save(newContactData)
-      .then((response) => {
-        if (response.status == 201) {
-          router.push('/contacts')
-        }
+  form.id = generateUUID();
+  form.userId = localStorage.getItem('userId');
+
+  contactApiService
+    .save(form)
+    .then((response) => {
+      if (response.status === 201) {
         emit('save')
-      })
-      .catch((error) => {
-        console.error('Error:', error)
-      })
+        router.push('/contacts')
+      }
+    })
+    .catch((error) => {
+      console.error('Error al guardar contacto:', error)
+    })
+}
+
+onMounted(() => {
+  if (id.value) {
+    contactApiService.get(id.value).then((response) => {
+      const contactData = response.data
+      form.name = contactData.name
+      form.email = contactData.email
+      form.id = contactData.id
+    })
   }
+})
 
-  onMounted(() => {
-    if (id.value) {
-      contactApiService.get(id.value).then((response) => {
-        const contactData = response.data
-
-        form.name = contactData.name
-        form.email = contactData.email
-        form.id = contactData.id
-      })
-    }
-  })
-
-  const onCancel = () => {
-    form.name = ''
-    form.email = ''
-    form.id = 0
-
-    emit('cancel')
+const onCancel = () => {
+  form.name = ''
+  form.email = ''
+  form.id = null
+  emit('cancel')
+  router.push('/contacts')
 }
 </script>
 
 <template>
   <form @submit.prevent="onSubmit" class="form-container">
-    <h2 class="contact-form-title">{{ $t('contacts.contactForm.title')}}</h2>
+    <h2 class="contact-form-title">{{ $t('contacts.contactForm.title') }}</h2>
     <div class="form-group">
       <contact-name v-model="form.name"></contact-name>
     </div>
@@ -85,6 +98,8 @@ const onSubmit = () => {
   display: flex;
   flex-direction: column;
   max-width: 600px;
+  margin: auto;
+  text-align: center;
 }
 
 .contact-form-title {
@@ -93,8 +108,10 @@ const onSubmit = () => {
   color: #B1375B;
   font-size: 2.1rem;
 }
+
 .form-group {
   margin-bottom: 10px;
+  text-align: right;
 }
 
 .form-actions {

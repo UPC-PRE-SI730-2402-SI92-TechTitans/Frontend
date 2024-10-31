@@ -1,22 +1,38 @@
 <script>
 import SidebarMenu from '@/layouts/the-sidebar.vue'
 import LoginPage from '@/contexts/login/components/login-page.vue'
+import RegisterPage from '@/contexts/register/components/user-form.vue'
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
-
-const route = useRoute()
 
 export default {
   components: {
     SidebarMenu,
-    LoginPage
+    LoginPage,
+    RegisterPage
+  },
+  setup() {
+    const route = useRoute()
+
+    const isLoginPage = computed(() => route.name === 'login' || route.path === '/login')
+    const isRegisterPage = computed(() => route.name === 'register' || route.path === '/register')
+
+    return {
+      isLoginPage,
+      isRegisterPage
+    }
   }
 }
-const isLoginPage = computed(() => route.name === 'login' || route.path === '/')
 </script>
 
 <template>
-  <div id="app">
+  <div v-if="isLoginPage">
+    <LoginPage />
+  </div>
+  <div v-else-if="isRegisterPage">
+    <RegisterPage />
+  </div>
+  <div id="app" v-else>
     <SidebarMenu />
     <router-view />
   </div>

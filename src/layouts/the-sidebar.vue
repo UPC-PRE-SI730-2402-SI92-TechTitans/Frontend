@@ -1,19 +1,42 @@
 <script>
 import { useI18n } from 'vue-i18n'
+import { ref, computed, onMounted } from 'vue';
+import { useRouter } from 'vue-router'
 
 export default {
   name: 'SidebarMenu',
   setup() {
     const { locale } = useI18n()
+    const router = useRouter()
 
     const currentLang = locale.value
+    const username = ref('');
+    const isAuthenticated = computed(() => !!localStorage.getItem('authToken'));
+
+    onMounted(() => {
+      if (isAuthenticated.value) {
+        username.value = localStorage.getItem('userName') || '';
+      }
+    });
 
     const changeLang = (lang) => {
       locale.value = lang
     }
+
+    const logout = () => {
+      localStorage.removeItem('authToken');
+      localStorage.removeItem('userName');
+      localStorage.removeItem('userId');
+      router.push('/')
+      location.reload();
+    }
+
     return {
       currentLang,
-      changeLang
+      changeLang,
+      isAuthenticated,
+      logout,
+      username
     }
   }
 }
@@ -21,6 +44,21 @@ export default {
 
 <template>
   <div class="sidebar">
+    <div class="auth-buttons">
+      <div v-if="isAuthenticated" class="username-logout">
+        <pv-message severity="info" class="username">{{ username }}</pv-message>
+        <pv-button @click="logout" severity="danger" text rounded>{{ $t('sidebar.logout') }} </pv-button>
+      </div>
+      <div v-else>
+        <router-link to="/login">
+          <pv-button severity="info" text rounded>{{ $t('sidebar.login') }} </pv-button>
+        </router-link>
+        <router-link to="/register">
+          <pv-button severity="info" text rounded>{{ $t('sidebar.register') }}</pv-button>
+        </router-link>
+      </div>
+    </div>
+
     <ul class="sidebar-list">
       <li class="list-item">
         <router-link to="/" class="item-link">{{ $t('sidebar.home') }}</router-link>
@@ -38,6 +76,7 @@ export default {
         <router-link to="/contacts" class="item-link">{{ $t('sidebar.contacts') }}</router-link>
       </li>
     </ul>
+
     <div class="bottom-section">
       <pv-button
         label="En"
@@ -45,6 +84,7 @@ export default {
         @click="changeLang('en')"
         aria-label="Switch language to English"
         aria-description="Click this button to change the language to English"
+        text
       />
       <pv-button
         label="Es"
@@ -52,6 +92,7 @@ export default {
         @click="changeLang('es')"
         aria-label="Switch language to Spanish"
         aria-description="Click this button to change the language to Spanish"
+        text
       />
     </div>
   </div>
@@ -73,6 +114,24 @@ export default {
   align-items: center;
   min-width: 170px;;
 }
+
+.auth-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.username-logout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.username {
+  color: #ddd;
+  font-size: 17px;
+  position: absolute;
+  top: 15%;
+}
+
 .sidebar-list {
   text-align: center;
   list-style: none;

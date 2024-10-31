@@ -18,7 +18,7 @@ const loadGroup = async (id) => {
 
 const totalDebt = computed(() => {
   if (!group.value || !group.value.participants) return 0;
-  
+
   return Object.values(group.value.participants).reduce((total, participant) => {
     return total + (parseFloat(participant.pendingPayment) || 0);
   }, 0);

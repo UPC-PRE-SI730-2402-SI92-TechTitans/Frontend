@@ -1,10 +1,10 @@
 export class Contact {
   constructor(
-    id = 0,
+    id = null,
     name = '',
     email = '',
   ) {
-    this.id = id !== null ? id : 0
+    this.id = id
     this.name = name
     this.email = email
   }

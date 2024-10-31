@@ -2,7 +2,9 @@ import { http } from '@/contexts/shared/services/http-common.js';
 
 export class GroupApiService {
   async getAll() {
-    return await http.get('/groups');
+    const userId = localStorage.getItem('userId');
+    const response = await http.get('/groups');
+    return { data: response.data.filter(group => group.userId === userId) };
   }
 
   async get(id) {
@@ -10,7 +12,8 @@ export class GroupApiService {
   }
 
   async save(body) {
-    return await http.post('/groups', body);
+    const userId = localStorage.getItem('userId');
+    return await http.post('/groups', { ...body, userId });
   }
 
   async update(id, body) {

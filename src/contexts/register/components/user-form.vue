@@ -65,10 +65,7 @@ const onSubmit = () => {
     userApiService
       .update(id.value, form)
       .then(() => {
-        router.push('/')
-      })
-      .catch((error) => {
-        console.error('Error:', error)
+        router.push('/login')
       })
     return
   }
@@ -77,10 +74,7 @@ const onSubmit = () => {
   userApiService
     .save(newUserData)
     .then(() => {
-      router.push('/')
-    })
-    .catch((error) => {
-      console.error('Error:', error)
+      router.push('/login')
     })
 }
 
@@ -102,7 +96,7 @@ const onCancel = () => {
   form.lastname = ''
   form.email = ''
   form.password = ''
-  form.id = 0
+  form.id = null
   emit('cancel')
 }
 </script>
@@ -145,7 +139,8 @@ const onCancel = () => {
 <style scoped>
 .register-form {
   text-align: center;
-  margin: auto;
+  width: 100vw;
+  margin-top: 20vh;
 }
 
 h2 {

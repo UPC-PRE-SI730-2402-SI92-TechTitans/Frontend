@@ -1,5 +1,4 @@
 <script setup>
-
 import { onBeforeMount, ref } from 'vue'
 import ContactList from '@/contexts/contact/components/contact-list.vue'
 import ContactForm from '@/contexts/contact/components/contact-form.vue'
@@ -7,7 +6,6 @@ import { Contact } from '../models/contact-entity.js'
 import { ContactApiService } from '@/contexts/contact/services/contact-api.js'
 
 const contactApiService = new ContactApiService()
-
 const contacts = ref([])
 
 const selectedContact = ref({})
@@ -42,8 +40,12 @@ const deleteContact = async (id) => {
 }
 
 const loadContacts = async () => {
-  const response = await contactApiService.getAll()
-  contacts.value = response.data
+  try {
+    const response = await contactApiService.getAll()
+    contacts.value = response.data
+  } catch (error) {
+    console.error('Error al cargar los contactos:', error)
+  }
 }
 
 onBeforeMount(async () => {

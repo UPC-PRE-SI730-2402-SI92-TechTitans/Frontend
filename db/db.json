@@ -1,323 +1,131 @@
 {
+  "users": [
+    {
+      "id": "2801",
+      "name": "Aldo",
+      "lastname": "Vasquez",
+      "email": "aldov12345@gmail.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "9327",
+      "name": "123",
+      "lastname": "123",
+      "email": "132@123.123",
+      "password": "132123123123123123123"
+    },
+    {
+      "id": "a3ad",
+      "name": "Valentina",
+      "lastname": "Lavado",
+      "email": "valentinalav123@gmail.com",
+      "password": "valentina123"
+    }
+  ],
   "contacts": [
     {
-      "id": "2",
-      "name": "Pedro Sanchez",
-      "email": "pedro_sanchez@gmail.com"
+      "id": "1",
+      "name": "Contact 1.1",
+      "email": "contact1@gmail.com",
+      "userId": "2801"
     },
     {
-      "id": "3cbf",
-      "name": "Juan",
-      "email": "juan@gmail.com"
+      "id": "09479fa565fb45af9037bb0ac1816aec",
+      "name": "123",
+      "email": "132",
+      "userId": "2801"
     },
     {
-      "id": "4",
-      "name": "Maria",
-      "email": "maria@gmail.com"
+      "id": "566e3abd1210437e9be023446525c287",
+      "name": "321",
+      "email": "321",
+      "userId": "2801"
     },
     {
-      "id": "6",
-      "name": "Luis",
-      "email": "luis@gmail.com"
+      "id": "ddfe6fa839e24588a416739abfc1274d",
+      "name": "333",
+      "email": "jaja",
+      "userId": "9327"
     },
     {
-      "id": "7",
-      "name": "Carlos",
-      "email": "carlos@gmail.com"
+      "id": "5191dc92272247b294d2b5ef564f5431",
+      "name": "Contacto V.1",
+      "email": "33231231",
+      "userId": "a3ad"
     }
   ],
   "groups": [
     {
-      "id": "1",
-      "name": "Grupo 1",
-      "creationDate": "2024-07-21",
-      "participants": {
-        "2": {
-          "id": "2",
-          "name": "Pedro Sanchez",
-          "email": "pedro_sanchez@gmail.com",
-          "amount": 3,
-          "pendingPayment": 0,
-          "previousAmount": 0,
-          "previousPendingPayment": 0,
-          "date": "10/03/2024"
-        },
-        "4": {
-          "id": "4",
-          "name": "Maria",
-          "email": "maria@gmail.com",
-          "amount": 11,
-          "pendingPayment": 5,
-          "previousAmount": 11,
-          "previousPendingPayment": 5,
-          "date": "04/10/2024",
-          "previousDate": "04/10/2024"
-        },
-        "7": {
-          "name": "Carlos",
-          "amount": 4,
-          "pendingPayment": 2227,
-          "previousAmount": 4,
-          "previousPendingPayment": 2227,
-          "date": "18/10/2024",
-          "previousDate": "18/10/2024"
-        },
-        "8": {
-          "name": "Ana",
-          "amount": 4,
-          "pendingPayment": 107,
-          "previousAmount": 4,
-          "previousPendingPayment": 107,
-          "date": "02/10/2024",
-          "previousDate": "02/10/2024"
-        },
-        "9": {
-          "name": "Adriana",
-          "amount": 120,
-          "date": null,
-          "pendingPayment": 115,
-          "previousAmount": 120,
-          "previousPendingPayment": 115,
-          "previousDate": null
-        },
-        "14": {
-          "name": "Elena",
-          "amount": 100,
-          "date": "10/24/2024",
-          "pendingPayment": 101,
-          "previousAmount": 100,
-          "previousPendingPayment": 101,
-          "previousDate": "10/24/2024"
-        },
-        "16": {
-          "name": "David",
-          "amount": 100,
-          "date": null,
-          "pendingPayment": 102,
-          "previousAmount": 100,
-          "previousPendingPayment": 102,
-          "previousDate": null
-        }
-      },
-      "description": " "
-    },
-    {
       "id": "a24f",
-      "name": "Grupo 2",
-      "description": "asdgfd",
+      "name": "Grupo 1.1",
+      "description": "Descripció",
+      "userId": "2801",
       "participants": {
-        "2": {
-          "id": "2",
-          "name": "Pedro Sanchez",
-          "email": "pedro_sanchez@gmail.com",
-          "amount": 48,
-          "pendingPayment": 0,
-          "date": "30/10/2024",
-          "previousAmount": 46,
-          "previousPendingPayment": 0
-        },
-        "5": {
-          "id": "5",
-          "name": "Jose",
-          "email": "jose@gmail.com",
+        "1": {
+          "id": "1",
+          "name": "Contact 1",
+          "email": "contact1@gmail.com",
+          "userId": "2801",
           "amount": 1,
-          "pendingPayment": 2,
-          "date": "",
-          "previousAmount": 1,
-          "previousPendingPayment": 2
+          "pendingPayment": 0
         },
-        "6": {
-          "id": "6",
-          "name": "Luis",
-          "email": "luis@gmail.com",
-          "amount": 10,
-          "pendingPayment": 0,
-          "date": "",
-          "previousAmount": 10,
-          "previousPendingPayment": 0
+        "2801": {
+          "id": "2801",
+          "name": "Aldo",
+          "email": "aldov12345@gmail.com",
+          "amount": 0
         },
-        "7": {
-          "id": "7",
-          "name": "Carlos",
-          "email": "carlos@gmail.com",
-          "amount": 10,
-          "pendingPayment": 1,
-          "date": "NaN/NaN/NaN",
-          "previousAmount": 10,
-          "previousPendingPayment": 1
-        },
-        "3cbf": {
-          "id": "3cbf",
-          "name": "Juan",
-          "email": "juan@gmail.com",
-          "amount": 6,
-          "pendingPayment": 0,
-          "date": "",
-          "previousAmount": 6,
-          "previousPendingPayment": 0
-        }
-      },
-      "creationDate": "2024-10-29"
-    },
-    {
-      "id": "92bb",
-      "name": "Grupo 3",
-      "description": "123123123",
-      "participants": {
-        "6": {
-          "id": "6",
-          "name": "Luis",
-          "email": "luis@gmail.com",
-          "amount": 1,
-          "pendingPayment": 5,
-          "date": "",
-          "previousAmount": 1,
-          "previousPendingPayment": 5
-        },
-        "7": {
-          "id": "7",
-          "name": "Carlos",
-          "email": "carlos@gmail.com",
-          "amount": 3,
-          "pendingPayment": 0,
-          "date": "",
-          "previousAmount": 3,
-          "previousPendingPayment": 0
-        },
-        "20": {
-          "id": "20",
-          "name": "Jorge",
-          "email": "jorge@gmail.com",
-          "amount": 1,
-          "pendingPayment": 1,
-          "date": "2024-10-29",
-          "previousAmount": 0,
-          "previousPendingPayment": 1
-        }
-      },
-      "creationDate": "2024-10-29"
-    },
-    {
-      "id": "c54d",
-      "name": "Grupo 4",
-      "description": "Descripcion del grupo 4",
-      "participants": {
-        "7": {
-          "id": "7",
-          "name": "Carlos",
-          "email": "carlos@gmail.com",
+        "3d75597901f14a3fbc901f73d0668091": {
+          "id": "3d75597901f14a3fbc901f73d0668091",
+          "name": "321",
+          "email": "321",
+          "userId": "2801",
           "amount": 0,
           "pendingPayment": 0
         }
       },
-      "creationDate": "2024-10-30"
-    }
-  ],
-  "users": [
-    {
-      "id": "b070",
-      "name": "243",
-      "lastname": "342",
-      "email": "1234",
-      "password": "34241"
+      "creationDate": "2024-10-29"
     },
     {
-      "id": "16d7",
-      "name": "123",
-      "lastname": "123",
-      "email": "123123",
-      "password": "123123"
+      "id": "0671",
+      "name": "3",
+      "description": "3",
+      "participants": {},
+      "creationDate": "2024-10-31",
+      "userId": "9327"
     },
     {
-      "id": "7166",
-      "name": "1231",
-      "lastname": "123",
-      "email": "123",
-      "password": "23123"
+      "id": "71f3",
+      "name": "grupo 1.2",
+      "description": " ",
+      "participants": {
+        "1": {
+          "id": "1",
+          "name": "Contact 1.1",
+          "email": "contact1@gmail.com",
+          "userId": "2801",
+          "amount": 0,
+          "pendingPayment": 0
+        },
+        "566e3abd1210437e9be023446525c287": {
+          "id": "566e3abd1210437e9be023446525c287",
+          "name": "321",
+          "email": "321",
+          "userId": "2801",
+          "amount": 0,
+          "pendingPayment": 0
+        }
+      },
+      "creationDate": "2024-10-31",
+      "userId": "2801"
     },
     {
-      "id": "d7c7",
-      "name": "",
-      "lastname": "",
-      "email": "",
-      "password": ""
-    },
-    {
-      "id": "4cc5",
-      "name": "",
-      "lastname": "",
-      "email": "",
-      "password": ""
-    },
-    {
-      "id": "d169",
-      "name": "1231sadgb213",
-      "lastname": "123123",
-      "email": "123123@123123.com",
-      "password": "123123123123123"
-    },
-    {
-      "id": "1071",
-      "name": "123",
-      "lastname": "1231",
-      "email": "23123123@123.c",
-      "password": "123123123123123"
-    },
-    {
-      "id": "e3ab",
-      "name": "123",
-      "lastname": "1231",
-      "email": "23123123@123.c",
-      "password": "123123123123123"
-    },
-    {
-      "id": "7acb",
-      "name": "123",
-      "lastname": "1231",
-      "email": "23123123@123.c",
-      "password": "123123123123123"
-    },
-    {
-      "id": "f273",
-      "name": "123",
-      "lastname": "1231",
-      "email": "23123123@123.c",
-      "password": "123123123123123"
-    },
-    {
-      "id": "8f04",
-      "name": "123",
-      "lastname": "123",
-      "email": "123@1.v",
-      "password": "123231231231231213"
-    },
-    {
-      "id": "b8b3",
-      "name": "123",
-      "lastname": "123",
-      "email": "123@12.com1",
-      "password": "123123123123123123"
-    },
-    {
-      "id": "3306",
-      "name": "123",
-      "lastname": "123",
-      "email": "321@1.gv",
-      "password": "123123123123123123123123"
-    },
-    {
-      "id": "f64c",
-      "name": "123",
-      "lastname": "123",
-      "email": "123@1.1",
-      "password": "123231312312312312"
-    },
-    {
-      "id": "2801",
-      "name": "123",
-      "lastname": "123",
-      "email": "3@12.,sdf",
-      "password": "12312312312312312312"
+      "id": "0259",
+      "name": "Grupo V.1",
+      "description": "123",
+      "participants": {},
+      "creationDate": "2024-10-31",
+      "userId": "a3ad"
     }
   ]
 }

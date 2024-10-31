@@ -14,8 +14,10 @@ const contacts = ref([]);
 const isEdit = ref(false);
 
 const loadContacts = async () => {
+  const userId = localStorage.getItem('userId');
   const response = await contactApiService.getAll();
-  contacts.value = response.data;
+
+  contacts.value = response.data.filter(contact => contact.userId === userId);
 };
 
 const loadGroup = async (id) => {

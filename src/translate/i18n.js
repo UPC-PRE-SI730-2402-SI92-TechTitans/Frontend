@@ -26,7 +26,10 @@ const messages = {
       groups: "Groups",
       Payments: "Payments",
       transactions: "Transactions",
-      contacts: "Contacts"
+      contacts: "Contacts",
+      register: "Register",
+      login: "Login",
+      logout: "Logout",
     },
     groups: {
       createGroup: {
@@ -70,7 +73,7 @@ const messages = {
         deleteButton: 'Delete'
       },
       contactForm: {
-        title: 'New Contact',
+        title: 'New contact',
         name: 'Name',
         email: 'Email',
         saveButton: 'Save',
@@ -103,7 +106,10 @@ const messages = {
       groups: "Grupos",
       Payments: "Pagos",
       transactions: "Transacciones",
-      contacts: "Contactos"
+      contacts: "Contactos",
+      register: "Registrar",
+      login: "Acceder",
+      logout: "Cerrar sesión",
     },
     groups: {
       createGroup: {
@@ -140,14 +146,14 @@ const messages = {
     contacts: {
       contactList: {
         title: 'Contactos',
-        addButton: 'Añadir contact',
+        addButton: 'Añadir contacto',
         name: 'Nombre',
         email: 'Correo electrónico',
         editButton: 'Editar',
         deleteButton: 'Eliminar'
       },
       contactForm: {
-        title: 'Nuevo contact',
+        title: 'Nuevo contacto',
         name: 'Nombre',
         email: 'Correo electrónico',
         saveButton: 'Guardar',

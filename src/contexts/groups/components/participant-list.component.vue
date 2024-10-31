@@ -33,8 +33,7 @@ const toggleParticipant = (contact) => {
       v-for="contact in contacts"
       :key="contact.id"
       @click="toggleParticipant(contact)"
-      class="participant-item"
-    >
+      class="participant-item">
       <span>{{ contact.name }}</span>
       <span v-if="modelValue[contact.id]" class="participant-item-check">✔️</span>
     </div>
