@@ -1,11 +1,18 @@
 <script>
 import SidebarMenu from '@/layouts/the-sidebar.vue'
+import LoginPage from '@/contexts/login/components/login-page.vue'
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
 
 export default {
   components: {
-    SidebarMenu
+    SidebarMenu,
+    LoginPage
   }
 }
+const isLoginPage = computed(() => route.name === 'login' || route.path === '/')
 </script>
 
 <template>

@@ -9,29 +9,33 @@ const props = defineProps({
 const emit = defineEmits(['update:modelValue'])
 
 const updateValue = (event) => {
-  emit('update:modelValue', event.target.value)
+  const newValue = event.target.value
+  emit('update:modelValue', newValue)
 }
 </script>
 
 <template>
   <div class="form">
-    <label for="password" class="password">Contraseña</label>
-    <pv-input-text type="password" id="password" :value="modelValue" @input="updateValue"></pv-input-text>
+    <label for="password" class="password">Password</label>
+    <pv-password
+      id="password"
+      :modelValue="modelValue"
+      @input="updateValue"
+      :feedback="false"
+      toggleMask
+      class="input-password"
+    />
   </div>
 </template>
 
 <style scoped>
-.form {
-  margin-bottom: 10px;
-}
-
 .password{
-  margin-left: 50px;
+  margin-left: 10px;
   margin-right: 10px;
 }
 
-input, select {
-  min-width: 15%;
-  padding: 8px;
+.input-password {
+  width: 250px;
+  margin-left: -4px;
 }
 </style>

@@ -15,23 +15,19 @@ const updateValue = (event) => {
 
 <template>
   <div class="form">
-    <label for="name" class="name">Nombre</label>
+    <label for="name" class="name">Name</label>
     <pv-input-text id="name" :value="modelValue" @input="updateValue"></pv-input-text>
   </div>
 </template>
 
 <style scoped>
-.form {
-  margin-bottom: 10px;
-}
-
 .name{
-  margin-left: 65px;
+  margin-left: 26px;
   margin-right: 10px;
 }
 
 input, select {
-  min-width: 15%;
+  width: 250px;
   padding: 8px;
 }
 </style>

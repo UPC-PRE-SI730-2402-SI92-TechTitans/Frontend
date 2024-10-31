@@ -3,7 +3,6 @@ const emit = defineEmits(['register', 'cancel'])
 
 const register = () => {
   emit('register')
-  alert("You have successfully registered, please login.")
 }
 
 const cancel = () => {

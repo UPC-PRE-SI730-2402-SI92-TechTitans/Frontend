@@ -7,6 +7,7 @@ import Card from 'primevue/card'
 import Avatar from 'primevue/avatar'
 import InputNumber from 'primevue/inputnumber';
 import DatePicker from 'primevue/datepicker';
+import Password from 'primevue/password';
 
 export default (app) => {
   app.use(PrimeVue, {
@@ -21,4 +22,5 @@ export default (app) => {
   app.component('pv-avatar', Avatar)
   app.component('pv-input-number', InputNumber)
   app.component('pv-date-picker', DatePicker)
+  app.component('pv-password', Password)
 }

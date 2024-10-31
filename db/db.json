@@ -212,5 +212,112 @@
       },
       "creationDate": "2024-10-30"
     }
+  ],
+  "users": [
+    {
+      "id": "b070",
+      "name": "243",
+      "lastname": "342",
+      "email": "1234",
+      "password": "34241"
+    },
+    {
+      "id": "16d7",
+      "name": "123",
+      "lastname": "123",
+      "email": "123123",
+      "password": "123123"
+    },
+    {
+      "id": "7166",
+      "name": "1231",
+      "lastname": "123",
+      "email": "123",
+      "password": "23123"
+    },
+    {
+      "id": "d7c7",
+      "name": "",
+      "lastname": "",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "4cc5",
+      "name": "",
+      "lastname": "",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "d169",
+      "name": "1231sadgb213",
+      "lastname": "123123",
+      "email": "123123@123123.com",
+      "password": "123123123123123"
+    },
+    {
+      "id": "1071",
+      "name": "123",
+      "lastname": "1231",
+      "email": "23123123@123.c",
+      "password": "123123123123123"
+    },
+    {
+      "id": "e3ab",
+      "name": "123",
+      "lastname": "1231",
+      "email": "23123123@123.c",
+      "password": "123123123123123"
+    },
+    {
+      "id": "7acb",
+      "name": "123",
+      "lastname": "1231",
+      "email": "23123123@123.c",
+      "password": "123123123123123"
+    },
+    {
+      "id": "f273",
+      "name": "123",
+      "lastname": "1231",
+      "email": "23123123@123.c",
+      "password": "123123123123123"
+    },
+    {
+      "id": "8f04",
+      "name": "123",
+      "lastname": "123",
+      "email": "123@1.v",
+      "password": "123231231231231213"
+    },
+    {
+      "id": "b8b3",
+      "name": "123",
+      "lastname": "123",
+      "email": "123@12.com1",
+      "password": "123123123123123123"
+    },
+    {
+      "id": "3306",
+      "name": "123",
+      "lastname": "123",
+      "email": "321@1.gv",
+      "password": "123123123123123123123123"
+    },
+    {
+      "id": "f64c",
+      "name": "123",
+      "lastname": "123",
+      "email": "123@1.1",
+      "password": "123231312312312312"
+    },
+    {
+      "id": "2801",
+      "name": "123",
+      "lastname": "123",
+      "email": "3@12.,sdf",
+      "password": "12312312312312312312"
+    }
   ]
 }
