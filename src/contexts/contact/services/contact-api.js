@@ -1,4 +1,4 @@
-import http from '@/contexts/shared/services/http-common.js'
+import { http } from '@/contexts/shared/services/http-common.js'
 
 export class ContactApiService {
   async getAll() {
