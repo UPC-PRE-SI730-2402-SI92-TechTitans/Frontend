@@ -8,21 +8,21 @@ const password = ref('')
 <template>
   <div class="login-container">
     <div class="login-form">
-      <h1>Inicio de sesión</h1>
+      <h1>Login</h1>
       <form class="form-container">
         <div class="form-group">
-          <label for="email" class="email">Correo electrónico</label>
+          <label for="email" class="email">Email</label>
           <pv-input-text type="text" id="email" v-model="email" />
         </div>
         <div class="form-group">
-          <label for="password" class="password">Contraseña</label>
+          <label for="password" class="password">Password</label>
           <pv-input-text type="password" id="password" v-model="password" />
         </div>
-        <pv-button class="button">Iniciar sesión</pv-button>
+        <pv-button class="button">Login</pv-button>
       </form>
     </div>
     <div class="register">
-      <RouterLink to="/register">Crear una cuenta</RouterLink>
+      <RouterLink to="/register">Create an account</RouterLink>
     </div>
   </div>
 </template>
@@ -52,11 +52,11 @@ h1{
 
 .password{
   margin-right: 10px;
-  margin-left: 50px;
 }
 
 .email{
   margin-right: 10px;
+  margin-left: 22px;
 }
 
 input, select {
