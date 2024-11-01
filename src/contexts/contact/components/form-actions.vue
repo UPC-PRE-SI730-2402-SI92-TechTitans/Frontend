@@ -8,34 +8,37 @@ const save = () => {
 const cancel = () => {
   emit('cancel')
 }
-
 </script>
 
 <template>
   <div class="p-field">
-    <pv-button @click="save" class="p-button-success">{{ $t('contacts.contactForm.saveButton')}}</pv-button>
-    <pv-button @click="cancel" class="p-button-secondary">{{ $t('contacts.contactForm.cancelButton')}}</pv-button>
+    <pv-button @click="save" class="p-button-success">{{
+      $t('contacts.contactForm.saveButton')
+    }}</pv-button>
+    <pv-button @click="cancel" class="p-button-secondary">{{
+      $t('contacts.contactForm.cancelButton')
+    }}</pv-button>
   </div>
 </template>
 
 <style scoped>
-.p-field{
+.p-field {
   display: flex;
   gap: 15px;
 }
 
-.p-button-success{
-  background-color: #E8C8C8;
-  color: #041C32;
-  border-color: #E8C8C8;
+.p-button-success {
+  background-color: #e8c8c8;
+  color: #041c32;
+  border-color: #e8c8c8;
   border-radius: 30px;
   font-size: 18px;
 }
 
-.p-button-secondary{
-  background-color: #E8C8C8;
-  color: #041C32;
-  border-color: #E8C8C8;
+.p-button-secondary {
+  background-color: #e8c8c8;
+  color: #041c32;
+  border-color: #e8c8c8;
   border-radius: 30px;
   font-size: 18px;
 }

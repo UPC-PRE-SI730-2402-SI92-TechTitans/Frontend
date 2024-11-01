@@ -14,24 +14,20 @@ const updateValue = (event) => {
 </script>
 
 <template>
-  <div class="p-field">
-    <label for="email" class="form-label">{{ $t('contacts.contactForm.email') }}</label>
-    <pv-input-text
-      id="email"
-      :value="modelValue"
-      @input="updateValue"
-      class="form-input"
-    ></pv-input-text>
+  <div class="form">
+    <label for="lastname" class="lastname">Last name</label>
+    <pv-input-text id="name" :value="modelValue" @input="updateValue"></pv-input-text>
   </div>
 </template>
 
 <style scoped>
-.form-label {
-  font-weight: bold;
+.lastname {
   margin-right: 10px;
 }
 
-.form-input {
-  width: 55%;
+input,
+select {
+  width: 250px;
+  padding: 8px;
 }
 </style>

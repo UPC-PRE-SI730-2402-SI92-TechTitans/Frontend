@@ -1,5 +1,5 @@
 <script setup>
-import { UserApiService } from '@/contexts/register/services/user-api.js'
+import { UserApiService } from '@/contexts/security/register/services/user-api.js'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
@@ -46,44 +46,45 @@ const login = async () => {
   width: 100vw;
   margin-top: 30vh;
 }
-.login-form{
+.login-form {
   text-align: center;
 }
 
-.form-group{
+.form-group {
   margin-bottom: 10px;
 }
 
-.button{
-  background-color: #E8C8C8;
-  color: #041C32;
-  border-color: #E8C8C8;
+.button {
+  background-color: #e8c8c8;
+  color: #041c32;
+  border-color: #e8c8c8;
   border-radius: 30px;
   font-size: 18px;
   margin-top: 30px;
 }
 
-h2{
+h2 {
   color: black;
   font-size: 40px;
   margin-bottom: 20px;
 }
 
-.password{
+.password {
   margin-right: 10px;
 }
 
-.email{
+.email {
   margin-right: 10px;
   margin-left: 22px;
 }
 
-input, select {
+input,
+select {
   min-width: 15%;
   padding: 8px;
 }
 
-.register{
+.register {
   text-align: center;
   margin-top: 20px;
 }

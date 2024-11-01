@@ -1,7 +1,7 @@
 <script>
 import SidebarMenu from '@/layouts/the-sidebar.vue'
-import LoginPage from '@/contexts/login/components/login-page.vue'
-import RegisterPage from '@/contexts/register/components/user-form.vue'
+import LoginPage from '@/contexts/security/login/components/login-page.vue'
+import RegisterPage from '@/contexts/security/register/components/user-form.vue'
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 
