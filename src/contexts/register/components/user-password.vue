@@ -29,7 +29,7 @@ const updateValue = (event) => {
 </template>
 
 <style scoped>
-.password{
+.password {
   margin-left: 10px;
   margin-right: 10px;
 }

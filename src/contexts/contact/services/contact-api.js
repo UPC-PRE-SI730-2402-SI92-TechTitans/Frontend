@@ -4,7 +4,7 @@ export class ContactApiService {
   async getAll() {
     const userId = localStorage.getItem('userId')
     const response = await http.get('/contacts')
-    return { data: response.data.filter(contact => contact.userId === userId) }
+    return { data: response.data.filter((contact) => contact.userId === userId) }
   }
 
   async get(id) {
@@ -17,8 +17,8 @@ export class ContactApiService {
   }
 
   async update(id, body) {
-    const userId = localStorage.getItem('userId');
-    return await http.put(`/contacts/${id}`, { ...body, userId });
+    const userId = localStorage.getItem('userId')
+    return await http.put(`/contacts/${id}`, { ...body, userId })
   }
 
   async delete(id) {

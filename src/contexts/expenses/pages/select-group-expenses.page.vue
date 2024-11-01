@@ -1,17 +1,17 @@
 <script setup>
-import { onBeforeMount, ref } from 'vue';
-import GroupCard from '../../groups/components/group-card.component.vue';
-import { GroupApiService } from '../../groups/services/group-api.js';
+import { onBeforeMount, ref } from 'vue'
+import GroupCard from '../../groups/components/group-card.component.vue'
+import { GroupApiService } from '../../groups/services/group-api.js'
 
-const groupApiService = new GroupApiService();
-const groups = ref([]);
+const groupApiService = new GroupApiService()
+const groups = ref([])
 
 const loadGroups = async () => {
-  const response = await groupApiService.getAll();
-  groups.value = response.data;
-};
+  const response = await groupApiService.getAll()
+  groups.value = response.data
+}
 
-onBeforeMount(loadGroups);
+onBeforeMount(loadGroups)
 </script>
 
 <template>

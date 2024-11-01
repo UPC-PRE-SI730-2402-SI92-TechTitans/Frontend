@@ -1,50 +1,50 @@
 <script setup>
-import { ref, onMounted } from 'vue';
-import { useRoute, useRouter } from 'vue-router';
-import ParticipantList from '../components/participant-list.component.vue';
-import { GroupApiService, ContactApiService } from '../services/group-api.js';
+import { ref, onMounted } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+import ParticipantList from '../components/participant-list.component.vue'
+import { GroupApiService, ContactApiService } from '../services/group-api.js'
 
-const route = useRoute();
-const router = useRouter();
-const groupApiService = new GroupApiService();
-const contactApiService = new ContactApiService();
+const route = useRoute()
+const router = useRouter()
+const groupApiService = new GroupApiService()
+const contactApiService = new ContactApiService()
 
-const group = ref({ name: '', description: '', participants: {} });
-const contacts = ref([]);
-const isEdit = ref(false);
+const group = ref({ name: '', description: '', participants: {} })
+const contacts = ref([])
+const isEdit = ref(false)
 
 const loadContacts = async () => {
-  const userId = localStorage.getItem('userId');
-  const response = await contactApiService.getAll();
+  const userId = localStorage.getItem('userId')
+  const response = await contactApiService.getAll()
 
-  contacts.value = response.data.filter(contact => contact.userId === userId);
-};
+  contacts.value = response.data.filter((contact) => contact.userId === userId)
+}
 
 const loadGroup = async (id) => {
-  const response = await groupApiService.get(id);
-  group.value = response.data;
-  isEdit.value = true;
-};
+  const response = await groupApiService.get(id)
+  group.value = response.data
+  isEdit.value = true
+}
 
 const saveGroup = async () => {
   if (!isEdit.value) {
-    group.value.creationDate = new Date().toISOString().split('T')[0];
+    group.value.creationDate = new Date().toISOString().split('T')[0]
   }
 
   if (isEdit.value) {
-    await groupApiService.update(group.value.id, group.value);
+    await groupApiService.update(group.value.id, group.value)
   } else {
-    await groupApiService.save(group.value);
+    await groupApiService.save(group.value)
   }
-  router.push('/groups');
-};
+  router.push('/groups')
+}
 
 onMounted(async () => {
-  await loadContacts();
+  await loadContacts()
   if (route.params.id) {
-    await loadGroup(route.params.id);
+    await loadGroup(route.params.id)
   }
-});
+})
 </script>
 
 <template>
@@ -60,18 +60,24 @@ onMounted(async () => {
       </div>
 
       <div class="form-item">
-        <label for="description" class="item-label">{{ $t('groups.createGroup.description') }}</label>
+        <label for="description" class="item-label">{{
+          $t('groups.createGroup.description')
+        }}</label>
         <textarea id="description" v-model="group.description" required></textarea>
       </div>
 
       <div class="form-item">
-        <label for="participants" class="item-label">{{ $t('groups.createGroup.participants') }}</label>
+        <label for="participants" class="item-label">{{
+          $t('groups.createGroup.participants')
+        }}</label>
         <ParticipantList :contacts="contacts" v-model="group.participants" />
       </div>
 
       <div class="form-actions">
         <router-link to="/groups">
-          <button type="button" class="button button-cancel">{{ $t('groups.createGroup.buttonCancel') }}</button>
+          <button type="button" class="button button-cancel">
+            {{ $t('groups.createGroup.buttonCancel') }}
+          </button>
         </router-link>
         <button type="submit" class="button button-create">
           {{ $t('groups.createGroup.buttonSave') }}
@@ -87,7 +93,7 @@ onMounted(async () => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
   margin: 50px 0;
 }
 .create-group-form {

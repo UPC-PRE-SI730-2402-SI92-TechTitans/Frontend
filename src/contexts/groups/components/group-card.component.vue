@@ -1,22 +1,22 @@
 <script setup>
-import { defineProps, defineEmits } from 'vue';
+import { defineProps, defineEmits } from 'vue'
 
 const props = defineProps({
   groups: {
     type: Array,
     required: true
   }
-});
+})
 
-const emit = defineEmits(['edit', 'delete']);
+const emit = defineEmits(['edit', 'delete'])
 
 const editGroup = (group) => {
-  emit('edit', group);
-};
+  emit('edit', group)
+}
 
 const deleteGroup = (id) => {
-  emit('delete', id);
-};
+  emit('delete', id)
+}
 </script>
 
 <template>
@@ -26,8 +26,12 @@ const deleteGroup = (id) => {
     </router-link>
     <p class="group-creation-date">{{ group.creationDate }}</p>
     <div class="group-button-container">
-      <button @click.prevent="editGroup(group)" class="group-button edit">{{ $t('groups.groupOverview.buttonEdit') }}</button>
-      <button @click.prevent="deleteGroup(group.id)" class="group-button delete">{{ $t('groups.groupOverview.buttonDelete') }}</button>
+      <button @click.prevent="editGroup(group)" class="group-button edit">
+        {{ $t('groups.groupOverview.buttonEdit') }}
+      </button>
+      <button @click.prevent="deleteGroup(group.id)" class="group-button delete">
+        {{ $t('groups.groupOverview.buttonDelete') }}
+      </button>
     </div>
   </div>
 </template>

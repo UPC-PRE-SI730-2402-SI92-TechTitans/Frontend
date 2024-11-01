@@ -1,28 +1,28 @@
 <script setup>
-import { onBeforeMount, ref } from 'vue';
-import { useRouter } from 'vue-router';
-import GroupCard from '../components/group-card.component.vue';
-import { GroupApiService } from '../services/group-api.js';
+import { onBeforeMount, ref } from 'vue'
+import { useRouter } from 'vue-router'
+import GroupCard from '../components/group-card.component.vue'
+import { GroupApiService } from '../services/group-api.js'
 
-const router = useRouter();
-const groupApiService = new GroupApiService();
-const groups = ref([]);
+const router = useRouter()
+const groupApiService = new GroupApiService()
+const groups = ref([])
 
 const loadGroups = async () => {
-  const response = await groupApiService.getAll();
-  groups.value = response.data;
-};
+  const response = await groupApiService.getAll()
+  groups.value = response.data
+}
 
 const loadForm = (group) => {
-  router.push({ name: 'updateGroup', params: { id: group.id } });
-};
+  router.push({ name: 'updateGroup', params: { id: group.id } })
+}
 
 const deleteGroup = async (id) => {
-  await groupApiService.delete(id);
-  await loadGroups();
-};
+  await groupApiService.delete(id)
+  await loadGroups()
+}
 
-onBeforeMount(loadGroups);
+onBeforeMount(loadGroups)
 </script>
 
 <template>

@@ -1,6 +1,6 @@
 <script>
 import { useI18n } from 'vue-i18n'
-import { ref, computed, onMounted } from 'vue';
+import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 
 export default {
@@ -10,25 +10,25 @@ export default {
     const router = useRouter()
 
     const currentLang = locale.value
-    const username = ref('');
-    const isAuthenticated = computed(() => !!localStorage.getItem('authToken'));
+    const username = ref('')
+    const isAuthenticated = computed(() => !!localStorage.getItem('authToken'))
 
     onMounted(() => {
       if (isAuthenticated.value) {
-        username.value = localStorage.getItem('userName') || '';
+        username.value = localStorage.getItem('userName') || ''
       }
-    });
+    })
 
     const changeLang = (lang) => {
       locale.value = lang
     }
 
     const logout = () => {
-      localStorage.removeItem('authToken');
-      localStorage.removeItem('userName');
-      localStorage.removeItem('userId');
+      localStorage.removeItem('authToken')
+      localStorage.removeItem('userName')
+      localStorage.removeItem('userId')
       router.push('/')
-      location.reload();
+      location.reload()
     }
 
     return {
@@ -47,7 +47,9 @@ export default {
     <div class="auth-buttons">
       <div v-if="isAuthenticated" class="username-logout">
         <pv-message severity="info" class="username">{{ username }}</pv-message>
-        <pv-button @click="logout" severity="danger" text rounded>{{ $t('sidebar.logout') }} </pv-button>
+        <pv-button @click="logout" severity="danger" text rounded
+          >{{ $t('sidebar.logout') }}
+        </pv-button>
       </div>
       <div v-else>
         <router-link to="/login">
@@ -70,7 +72,9 @@ export default {
         <router-link to="/payments" class="item-link">{{ $t('sidebar.Payments') }}</router-link>
       </li>
       <li class="list-item">
-        <router-link to="/transactions" class="item-link">{{ $t('sidebar.transactions') }}</router-link>
+        <router-link to="/transactions" class="item-link">{{
+          $t('sidebar.transactions')
+        }}</router-link>
       </li>
       <li class="list-item">
         <router-link to="/contacts" class="item-link">{{ $t('sidebar.contacts') }}</router-link>
@@ -112,7 +116,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 170px;;
+  min-width: 170px;
 }
 
 .auth-buttons {

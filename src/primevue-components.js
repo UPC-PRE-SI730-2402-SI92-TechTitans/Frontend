@@ -5,10 +5,10 @@ import InputText from 'primevue/inputtext'
 import Button from 'primevue/button'
 import Card from 'primevue/card'
 import Avatar from 'primevue/avatar'
-import InputNumber from 'primevue/inputnumber';
-import DatePicker from 'primevue/datepicker';
-import Password from 'primevue/password';
-import Message from 'primevue/message';
+import InputNumber from 'primevue/inputnumber'
+import DatePicker from 'primevue/datepicker'
+import Password from 'primevue/password'
+import Message from 'primevue/message'
 
 export default (app) => {
   app.use(PrimeVue, {

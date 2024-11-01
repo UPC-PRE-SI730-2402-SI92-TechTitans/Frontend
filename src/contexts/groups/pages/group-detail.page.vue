@@ -1,41 +1,43 @@
 <script setup>
-import { ref, onMounted, computed } from 'vue';
-import { useRoute } from 'vue-router';
-import { GroupApiService } from '../services/group-api.js';
+import { ref, onMounted, computed } from 'vue'
+import { useRoute } from 'vue-router'
+import { GroupApiService } from '../services/group-api.js'
 
-const route = useRoute();
-const groupApiService = new GroupApiService();
-const group = ref(null);
+const route = useRoute()
+const groupApiService = new GroupApiService()
+const group = ref(null)
 
 const loadGroup = async (id) => {
   try {
-    const response = await groupApiService.get(id);
-    group.value = response.data;
+    const response = await groupApiService.get(id)
+    group.value = response.data
   } catch (error) {
-    console.error("Error al cargar el grupo:", error);
+    console.error('Error al cargar el grupo:', error)
   }
-};
+}
 
 const totalDebt = computed(() => {
-  if (!group.value || !group.value.participants) return 0;
+  if (!group.value || !group.value.participants) return 0
 
   return Object.values(group.value.participants).reduce((total, participant) => {
-    return total + (parseFloat(participant.pendingPayment) || 0);
-  }, 0);
-});
+    return total + (parseFloat(participant.pendingPayment) || 0)
+  }, 0)
+})
 
 onMounted(() => {
-  const groupId = route.params.id;
+  const groupId = route.params.id
   if (groupId) {
-    loadGroup(groupId);
+    loadGroup(groupId)
   }
-});
+})
 </script>
 
 <template>
   <div class="group-details" v-if="group">
     <h2 class="group-title">{{ $t('groups.groupDetail.title') }} {{ group.name }}</h2>
-    <p class="group-creation-date">{{ $t('groups.groupDetail.creationDate') }} {{ group.creationDate }}</p>
+    <p class="group-creation-date">
+      {{ $t('groups.groupDetail.creationDate') }} {{ group.creationDate }}
+    </p>
 
     <h3 class="subtitle">{{ $t('groups.groupDetail.expenses') }}</h3>
     <table class="table">
@@ -72,10 +74,13 @@ onMounted(() => {
           <td class="table-items">{{ participant.pendingPayment }} $</td>
         </tr>
       </tbody>
-    </table><br><br>
+    </table>
+    <br /><br />
 
     <router-link :to="{ name: 'groupExpenses', params: { id: group.id } }">
-      <button type="button" class="button-edit-expenses">{{ $t('groups.groupDetail.editExpensesButton') }}</button>
+      <button type="button" class="button-edit-expenses">
+        {{ $t('groups.groupDetail.editExpensesButton') }}
+      </button>
     </router-link>
   </div>
 </template>

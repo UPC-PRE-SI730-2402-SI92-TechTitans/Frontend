@@ -7,24 +7,31 @@ export default {
 <template>
   <div class="start-page">
     <h1>Finance Guard</h1>
-    <img src="../../../assets/FinanceGuardLogo.png" alt="Finance Guard Logo">
+    <img src="../../../assets/FinanceGuardLogo.png" alt="Finance Guard Logo" />
     <section class="section-one">
       <h2 class="start-subtitle">{{ $t('homePage.startTitle') }}</h2>
-      <p class="section-one-text"><br>{{ $t('homePage.sectionOne.paragraph1') }}<br><br>
-        {{ $t('homePage.sectionOne.paragraph2') }}<br><br>
-        {{ $t('homePage.sectionOne.paragraph3') }}<br><br>
-        {{ $t('homePage.sectionOne.paragraph4') }}<br><br>
-        {{ $t('homePage.sectionOne.paragraph5') }}<br><br>
+      <p class="section-one-text">
+        <br />{{ $t('homePage.sectionOne.paragraph1') }}<br /><br />
+        {{ $t('homePage.sectionOne.paragraph2') }}<br /><br />
+        {{ $t('homePage.sectionOne.paragraph3') }}<br /><br />
+        {{ $t('homePage.sectionOne.paragraph4') }}<br /><br />
+        {{ $t('homePage.sectionOne.paragraph5') }}<br /><br />
         {{ $t('homePage.sectionOne.paragraph6') }}
       </p>
     </section>
-    
+
     <section class="section-two">
       <h2 class="start-subtitle">{{ $t('homePage.sectionTwo.startSubtitle') }}</h2>
       <ul class="subscription-list">
-        <li class="subscription-item">{{ $t('homePage.sectionTwo.subscriptionList.item1') }}<br><br><span>S/ 9,90</span></li>
-        <li class="subscription-item">{{ $t('homePage.sectionTwo.subscriptionList.item2') }}<br><br><span>S/ 29,90</span></li>
-        <li class="subscription-item">{{ $t('homePage.sectionTwo.subscriptionList.item3') }}<br><br><span>S/ 169,90</span></li>
+        <li class="subscription-item">
+          {{ $t('homePage.sectionTwo.subscriptionList.item1') }}<br /><br /><span>S/ 9,90</span>
+        </li>
+        <li class="subscription-item">
+          {{ $t('homePage.sectionTwo.subscriptionList.item2') }}<br /><br /><span>S/ 29,90</span>
+        </li>
+        <li class="subscription-item">
+          {{ $t('homePage.sectionTwo.subscriptionList.item3') }}<br /><br /><span>S/ 169,90</span>
+        </li>
       </ul>
     </section>
   </div>

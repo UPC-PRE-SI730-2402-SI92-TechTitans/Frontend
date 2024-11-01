@@ -21,12 +21,13 @@ const updateValue = (event) => {
 </template>
 
 <style scoped>
-.name{
+.name {
   margin-left: 26px;
   margin-right: 10px;
 }
 
-input, select {
+input,
+select {
   width: 250px;
   padding: 8px;
 }

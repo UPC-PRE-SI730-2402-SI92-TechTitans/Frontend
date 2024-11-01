@@ -9,26 +9,26 @@ const props = defineProps({
 const emit = defineEmits(['update:modelValue'])
 
 const updateValue = (event) => {
-  const value = event.target.value;
-  emit('update:modelValue', value);
+  const value = event.target.value
+  emit('update:modelValue', value)
 }
 </script>
 
 <template>
   <div class="form">
     <label for="email" class="email">Email</label>
-    <pv-input-text id="email" :value="modelValue" @input="updateValue" ></pv-input-text>
+    <pv-input-text id="email" :value="modelValue" @input="updateValue"></pv-input-text>
   </div>
 </template>
 
 <style scoped>
-
-.email{
+.email {
   margin-left: 27px;
   margin-right: 10px;
 }
 
-input, select {
+input,
+select {
   width: 250px;
   padding: 8px;
 }

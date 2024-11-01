@@ -15,18 +15,18 @@ const contactApiService = new ContactApiService()
 const id = ref(routes.params.id || '')
 
 function generateUUID() {
-  let d = new Date().getTime();
+  let d = new Date().getTime()
   let uuid = 'xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-    let r = (d + Math.random() * 16) % 16 | 0;
-    d = Math.floor(d / 16);
-    return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
-  });
-  return uuid;
+    let r = (d + Math.random() * 16) % 16 | 0
+    d = Math.floor(d / 16)
+    return (c == 'x' ? r : (r & 0x3) | 0x8).toString(16)
+  })
+  return uuid
 }
 
 const onSubmit = () => {
   if (id.value !== '') {
-    form.userId = localStorage.getItem('userId');
+    form.userId = localStorage.getItem('userId')
 
     contactApiService
       .update(id.value, form)
@@ -42,8 +42,8 @@ const onSubmit = () => {
     return
   }
 
-  form.id = generateUUID();
-  form.userId = localStorage.getItem('userId');
+  form.id = generateUUID()
+  form.userId = localStorage.getItem('userId')
 
   contactApiService
     .save(form)
@@ -105,7 +105,7 @@ const onCancel = () => {
 .contact-form-title {
   margin-bottom: 20px;
   text-align: center;
-  color: #B1375B;
+  color: #b1375b;
   font-size: 2.1rem;
 }
 

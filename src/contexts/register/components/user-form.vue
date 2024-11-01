@@ -62,20 +62,16 @@ const onSubmit = () => {
   if (!validateForm()) return
 
   if (id.value !== '') {
-    userApiService
-      .update(id.value, form)
-      .then(() => {
-        router.push('/login')
-      })
+    userApiService.update(id.value, form).then(() => {
+      router.push('/login')
+    })
     return
   }
 
   const { id: omitId, ...newUserData } = form
-  userApiService
-    .save(newUserData)
-    .then(() => {
-      router.push('/login')
-    })
+  userApiService.save(newUserData).then(() => {
+    router.push('/login')
+  })
 }
 
 onMounted(() => {
@@ -146,7 +142,7 @@ const onCancel = () => {
 h2 {
   color: black;
   font-size: 40px;
-  margin-bottom: 30px
+  margin-bottom: 30px;
 }
 
 .error {
@@ -161,7 +157,7 @@ h2 {
   margin-bottom: 30px;
 }
 
-.login{
+.login {
   text-align: center;
   margin-top: 20px;
 }
