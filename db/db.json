@@ -1,14 +1,179 @@
 {
-  "contactos": [
+  "users": [
     {
-      "id": "3cbf",
-      "name": "Juan",
-      "email": "juan@gmail.com"
+      "id": "2801",
+      "name": "Aldo",
+      "lastname": "Vasquez",
+      "email": "aldov12345@gmail.com",
+      "password": "1234567890"
     },
     {
-      "id": "af28",
-      "name": "sdf",
-      "email": "awdsf@gmail.com"
+      "id": "9327",
+      "name": "123",
+      "lastname": "123",
+      "email": "132@123.123",
+      "password": "132123123123123123123"
+    },
+    {
+      "id": "a3ad",
+      "name": "Valentina",
+      "lastname": "Lavado",
+      "email": "valentinalav123@gmail.com",
+      "password": "valentina123"
+    },
+    {
+      "id": "dfa8",
+      "name": "ccccc@gmail.com",
+      "lastname": "ccccc@gmail.com",
+      "email": "ccccc@gmail.com",
+      "password": "ccccc@gmail.com"
+    }
+  ],
+  "contacts": [
+    {
+      "id": "1",
+      "name": "Contact 1.1",
+      "email": "contact1@gmail.com",
+      "userId": "2801"
+    },
+    {
+      "id": "09479fa565fb45af9037bb0ac1816aec",
+      "name": "123",
+      "email": "132",
+      "userId": "2801"
+    },
+    {
+      "id": "566e3abd1210437e9be023446525c287",
+      "name": "321",
+      "email": "321",
+      "userId": "2801"
+    },
+    {
+      "id": "ddfe6fa839e24588a416739abfc1274d",
+      "name": "333",
+      "email": "jaja",
+      "userId": "9327"
+    },
+    {
+      "id": "5191dc92272247b294d2b5ef564f5431",
+      "name": "Contacto V.1",
+      "email": "33231231",
+      "userId": "a3ad"
+    },
+    {
+      "id": "52807ec06c634cc197f9da28b89b1c1d",
+      "name": "dsadasasd",
+      "email": "asdasdasd",
+      "userId": "dfa8"
+    }
+  ],
+  "groups": [
+    {
+      "id": "a24f",
+      "name": "Grupo 1.1",
+      "description": "Descripció",
+      "userId": "2801",
+      "participants": {
+        "1": {
+          "id": "1",
+          "name": "Contact 1",
+          "email": "contact1@gmail.com",
+          "userId": "2801",
+          "amount": 1,
+          "pendingPayment": 0
+        },
+        "2801": {
+          "id": "2801",
+          "name": "Aldo",
+          "email": "aldov12345@gmail.com",
+          "amount": 0
+        },
+        "3d75597901f14a3fbc901f73d0668091": {
+          "id": "3d75597901f14a3fbc901f73d0668091",
+          "name": "321",
+          "email": "321",
+          "userId": "2801",
+          "amount": 0,
+          "pendingPayment": 0
+        }
+      },
+      "creationDate": "2024-10-29"
+    },
+    {
+      "id": "0671",
+      "name": "3",
+      "description": "3",
+      "participants": {},
+      "creationDate": "2024-10-31",
+      "userId": "9327"
+    },
+    {
+      "id": "71f3",
+      "name": "grupo 1.2",
+      "description": " ",
+      "participants": {
+        "1": {
+          "id": "1",
+          "name": "Contact 1.1",
+          "email": "contact1@gmail.com",
+          "userId": "2801",
+          "amount": 0,
+          "pendingPayment": 0
+        },
+        "566e3abd1210437e9be023446525c287": {
+          "id": "566e3abd1210437e9be023446525c287",
+          "name": "321",
+          "email": "321",
+          "userId": "2801",
+          "amount": 0,
+          "pendingPayment": 0
+        }
+      },
+      "creationDate": "2024-10-31",
+      "userId": "2801"
+    },
+    {
+      "id": "0259",
+      "name": "Grupo V.1",
+      "description": "123",
+      "participants": {},
+      "creationDate": "2024-10-31",
+      "userId": "a3ad"
+    },
+    {
+      "id": "31a3",
+      "name": "dasfgd",
+      "description": "dsaf",
+      "participants": {
+        "52807ec06c634cc197f9da28b89b1c1d": {
+          "id": "52807ec06c634cc197f9da28b89b1c1d",
+          "name": "dsadasasd",
+          "email": "asdasdasd",
+          "userId": "dfa8",
+          "amount": 5,
+          "pendingPayment": 8,
+          "date": "11/02/2024"
+        }
+      },
+      "creationDate": "2024-11-02",
+      "userId": "dfa8"
+    },
+    {
+      "id": "9ff3",
+      "name": "Nombre",
+      "description": "Detalles del grupo",
+      "participants": {
+        "52807ec06c634cc197f9da28b89b1c1d": {
+          "id": "52807ec06c634cc197f9da28b89b1c1d",
+          "name": "dsadasasd",
+          "email": "asdasdasd",
+          "userId": "dfa8",
+          "amount": 0,
+          "pendingPayment": 0
+        }
+      },
+      "creationDate": "2024-11-02",
+      "userId": "dfa8"
     }
   ]
 }
