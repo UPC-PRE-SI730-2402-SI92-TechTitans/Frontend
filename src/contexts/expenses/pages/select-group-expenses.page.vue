@@ -1,6 +1,5 @@
 <script setup>
 import { onBeforeMount, ref } from 'vue'
-import GroupCard from '../../groups/components/group-card.component.vue'
 import { GroupApiService } from '../../groups/services/group-api.js'
 
 const groupApiService = new GroupApiService()
