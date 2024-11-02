@@ -27,6 +27,13 @@
       "lastname": "ccccc@gmail.com",
       "email": "ccccc@gmail.com",
       "password": "ccccc@gmail.com"
+    },
+    {
+      "id": "84b9",
+      "name": "111@111.1111",
+      "lastname": "111@111.1111",
+      "email": "111@111.1111",
+      "password": "111@111.1111"
     }
   ],
   "contacts": [
@@ -174,6 +181,14 @@
       },
       "creationDate": "2024-11-02",
       "userId": "dfa8"
+    },
+    {
+      "id": "0826",
+      "name": "111@111.1111",
+      "description": "111@111.1111",
+      "participants": {},
+      "creationDate": "2024-11-02",
+      "userId": "84b9"
     }
   ]
 }

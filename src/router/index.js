@@ -8,6 +8,7 @@ import ContactManagement from '@/contexts/contact/pages/contact-management.vue'
 import GroupExpensesView from '@/contexts/expenses/pages/group-expenses.page.vue'
 import Login from '@/contexts/security/login/components/login-page.vue'
 import UserForm from '@/contexts/security/register/components/user-form.vue'
+import selectGroupExpenses from '@/contexts/expenses/pages/select-group-expenses.page.vue'
 
 const routes = [
   { path: '/', name: 'Home', component: StartPageView },
@@ -53,7 +54,8 @@ const routes = [
     meta: { requiresAuth: true }
   },
   { path: '/login', component: Login, name: 'login' },
-  { path: '/register', component: UserForm, name: 'register' }
+  { path: '/register', component: UserForm, name: 'register' },
+  { path: '/payments', component: selectGroupExpenses, meta: { requiresAuth: true } }
 ]
 
 const router = createRouter({

@@ -69,9 +69,7 @@ export default {
         <router-link to="/groups" class="item-link">{{ $t('sidebar.groups') }}</router-link>
       </li>
       <li class="list-item">
-        <router-link to="/transactions" class="item-link">{{
-          $t('sidebar.transactions')
-        }}</router-link>
+        <router-link to="/payments" class="item-link">{{ $t('sidebar.payments') }}</router-link>
       </li>
       <li class="list-item">
         <router-link to="/contacts" class="item-link">{{ $t('sidebar.contacts') }}</router-link>

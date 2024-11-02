@@ -30,7 +30,7 @@ const messages = {
     sidebar: {
       home: 'Home',
       groups: 'Groups',
-      Payments: 'Payments',
+      payments: 'Payments',
       transactions: 'Transactions',
       contacts: 'Contacts',
       register: 'Register',
@@ -116,7 +116,7 @@ const messages = {
     sidebar: {
       home: 'Inicio',
       groups: 'Grupos',
-      Payments: 'Pagos',
+      payments: 'Pagos',
       transactions: 'Transacciones',
       contacts: 'Contactos',
       register: 'Registrar',
